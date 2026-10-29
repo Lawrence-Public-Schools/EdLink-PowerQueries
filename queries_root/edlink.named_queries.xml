@@ -1,0 +1,2923 @@
+<?xml version="1.0"?>
+<queries>
+  <query name="link.ed.api.version" flattened="true" tags="">
+    <summary>Edlink Version</summary>
+    <description>Edlink Version Data</description>
+    <columns>
+      <column column="schools.id">edlink_version</column>
+    </columns>
+    <sql>
+      <![CDATA[
+      SELECT
+        'Powerschool Full 0.0.13' as edlink_version
+      FROM
+        schools
+      WHERE rownum = 1
+      ]]>
+    </sql>
+  </query>
+  <query name="link.ed.api.attendance_daily" flattened="true" tags="">
+    <summary>Edlink Attendance Daily</summary>
+    <description>Edlink Attendance Daily Data</description>
+    <columns>
+      <column column="ps_attendance_daily.id">ps_attendance_daily.id</column>
+      <column column="ps_attendance_daily.studentid">ps_attendance_daily.studentid</column>
+      <column column="ps_attendance_daily.schoolid">ps_attendance_daily.schoolid</column>
+      <column column="ps_attendance_daily.att_date">ps_attendance_daily.att_date</column>
+      <column column="ps_attendance_daily.attendance_codeid">ps_attendance_daily.attendance_codeid</column>
+      <column column="ps_attendance_daily.att_code">ps_attendance_daily.att_code</column>
+      <column column="ps_attendance_daily.att_mode_code">ps_attendance_daily.att_mode_code</column>
+      <column column="ps_attendance_daily.calendar_dayid">ps_attendance_daily.calendar_dayid</column>
+      <column column="ps_attendance_daily.programid">ps_attendance_daily.programid</column>
+      <column column="ps_attendance_daily.track_a">ps_attendance_daily.track_a</column>
+      <column column="ps_attendance_daily.track_b">ps_attendance_daily.track_b</column>
+      <column column="ps_attendance_daily.track_c">ps_attendance_daily.track_c</column>
+      <column column="ps_attendance_daily.track_d">ps_attendance_daily.track_d</column>
+      <column column="ps_attendance_daily.track_e">ps_attendance_daily.track_e</column>
+      <column column="ps_attendance_daily.track_f">ps_attendance_daily.track_f</column>
+      <column column="ps_attendance_daily.insession">ps_attendance_daily.insession</column>
+      <column column="ps_attendance_daily.count_for_ada">ps_attendance_daily.count_for_ada</column>
+      <column column="ps_attendance_daily.presence_status_cd">ps_attendance_daily.presence_status_cd</column>
+      <column column="ps_attendance_daily.cycle_day_id">ps_attendance_daily.cycle_day_id</column>
+      <column column="ps_attendance_daily.cycle_day_abbreviation">
+        ps_attendance_daily.cycle_day_abbreviation</column>
+      <column column="ps_attendance_daily.total_minutes">ps_attendance_daily.total_minutes</column>
+      <column column="ps_attendance_daily.count_for_adm">ps_attendance_daily.count_for_adm</column>
+    </columns>
+    <sql>
+      <![CDATA[
+      SELECT
+        ps_attendance_daily.id,
+        ps_attendance_daily.studentid,
+        ps_attendance_daily.schoolid,
+        ps_attendance_daily.att_date,
+        ps_attendance_daily.attendance_codeid,
+        ps_attendance_daily.att_code,
+        ps_attendance_daily.att_mode_code,
+        ps_attendance_daily.calendar_dayid,
+        ps_attendance_daily.programid,
+        ps_attendance_daily.track_a,
+        ps_attendance_daily.track_b,
+        ps_attendance_daily.track_c,
+        ps_attendance_daily.track_d,
+        ps_attendance_daily.track_e,
+        ps_attendance_daily.track_f,
+        ps_attendance_daily.insession,
+        ps_attendance_daily.count_for_ada,
+        ps_attendance_daily.presence_status_cd,
+        ps_attendance_daily.cycle_day_id,
+        ps_attendance_daily.cycle_day_abbreviation,
+        ps_attendance_daily.total_minutes,
+        ps_attendance_daily.count_for_adm
+      FROM
+          ps_attendance_daily
+      ORDER BY ps_attendance_daily.id
+      ]]>
+    </sql>
+  </query>
+  <query name="link.ed.api.attendance_meeting" flattened="true" tags="">
+    <summary>Edlink Attendance Meeting</summary>
+    <description>Edlink Attendance Meeting Data</description>
+    <columns>
+      <column column="ps_attendance_meeting.id">ps_attendance_meeting.id</column>
+      <column column="ps_attendance_meeting.studentid">ps_attendance_meeting.studentid</column>
+      <column column="ps_attendance_meeting.schoolid">ps_attendance_meeting.schoolid</column>
+      <column column="ps_attendance_meeting.att_date">ps_attendance_meeting.att_date</column>
+      <column column="ps_attendance_meeting.attendance_codeid">
+        ps_attendance_meeting.attendance_codeid</column>
+      <column column="ps_attendance_meeting.att_code">ps_attendance_meeting.att_code</column>
+      <column column="ps_attendance_meeting.att_mode_code">ps_attendance_meeting.att_mode_code</column>
+      <column column="ps_attendance_meeting.att_interval">ps_attendance_meeting.att_interval</column>
+      <column column="ps_attendance_meeting.calendar_dayid">ps_attendance_meeting.calendar_dayid</column>
+      <column column="ps_attendance_meeting.ccid">ps_attendance_meeting.ccid</column>
+      <column column="ps_attendance_meeting.cc_schoolid">ps_attendance_meeting.cc_schoolid</column>
+      <column column="ps_attendance_meeting.dropped">ps_attendance_meeting.dropped</column>
+      <column column="ps_attendance_meeting.periodid">ps_attendance_meeting.periodid</column>
+      <column column="ps_attendance_meeting.period_abbreviation">
+        ps_attendance_meeting.period_abbreviation</column>
+      <column column="ps_attendance_meeting.period_number">ps_attendance_meeting.period_number</column>
+      <column column="ps_attendance_meeting.sectionid">ps_attendance_meeting.sectionid</column>
+      <column column="ps_attendance_meeting.section_number">ps_attendance_meeting.section_number</column>
+      <column column="ps_attendance_meeting.programid">ps_attendance_meeting.programid</column>
+      <column column="ps_attendance_meeting.track_a">ps_attendance_meeting.track_a</column>
+      <column column="ps_attendance_meeting.track_b">ps_attendance_meeting.track_b</column>
+      <column column="ps_attendance_meeting.track_c">ps_attendance_meeting.track_c</column>
+      <column column="ps_attendance_meeting.track_d">ps_attendance_meeting.track_d</column>
+      <column column="ps_attendance_meeting.track_e">ps_attendance_meeting.track_e</column>
+      <column column="ps_attendance_meeting.track_f">ps_attendance_meeting.track_f</column>
+      <column column="ps_attendance_meeting.insession">ps_attendance_meeting.insession</column>
+      <column column="ps_attendance_meeting.count_for_ada">ps_attendance_meeting.count_for_ada</column>
+      <column column="ps_attendance_meeting.presence_status_cd">
+        ps_attendance_meeting.presence_status_cd</column>
+      <column column="ps_attendance_meeting.cycle_day_id">ps_attendance_meeting.cycle_day_id</column>
+      <column column="ps_attendance_meeting.cycle_day_abbreviation">
+        ps_attendance_meeting.cycle_day_abbreviation</column>
+      <column column="ps_attendance_meeting.total_minutes">ps_attendance_meeting.total_minutes</column>
+      <column column="ps_attendance_meeting.course_credit_points">
+        ps_attendance_meeting.course_credit_points</column>
+    </columns>
+    <sql>
+      <![CDATA[
+      SELECT
+        ps_attendance_meeting.id,
+        ps_attendance_meeting.studentid,
+        ps_attendance_meeting.schoolid,
+        ps_attendance_meeting.att_date,
+        ps_attendance_meeting.attendance_codeid,
+        ps_attendance_meeting.att_code,
+        ps_attendance_meeting.att_mode_code,
+        ps_attendance_meeting.att_interval,
+        ps_attendance_meeting.calendar_dayid,
+        ps_attendance_meeting.ccid,
+        ps_attendance_meeting.cc_schoolid,
+        ps_attendance_meeting.dropped,
+        ps_attendance_meeting.periodid,
+        ps_attendance_meeting.period_abbreviation,
+        ps_attendance_meeting.period_number,
+        ps_attendance_meeting.sectionid,
+        ps_attendance_meeting.section_number,
+        ps_attendance_meeting.programid,
+        ps_attendance_meeting.track_a,
+        ps_attendance_meeting.track_b,
+        ps_attendance_meeting.track_c,
+        ps_attendance_meeting.track_d,
+        ps_attendance_meeting.track_e,
+        ps_attendance_meeting.track_f,
+        ps_attendance_meeting.insession,
+        ps_attendance_meeting.count_for_ada,
+        ps_attendance_meeting.presence_status_cd,
+        ps_attendance_meeting.cycle_day_id,
+        ps_attendance_meeting.cycle_day_abbreviation,
+        ps_attendance_meeting.total_minutes,
+        ps_attendance_meeting.course_credit_points
+      FROM
+        ps_attendance_meeting
+      ORDER BY ps_attendance_meeting.id
+      ]]>
+    </sql>
+  </query>
+  <query name="link.ed.api.schools" flattened="true" tags="">
+    <summary>Edlink Schools</summary>
+    <description>Edlink Schools Data</description>
+    <columns>
+      <column column="schools.abbreviation">schools.abbreviation</column>
+      <column column="schools.activecrslist">schools.activecrslist</column>
+      <column column="schools.address">schools.address</column>
+      <column column="schools.alternate_school_number">schools.alternate_school_number</column>
+      <column column="schools.asstprincipalemail">schools.asstprincipalemail</column>
+      <column column="schools.asstprincipalphone">schools.asstprincipalphone</column>
+      <column column="schools.bulletinemail">schools.bulletinemail</column>
+      <column column="schools.countyname">schools.countyname</column>
+      <column column="schools.countynbr">schools.countynbr</column>
+      <column column="schools.dcid">schools.dcid</column>
+      <column column="schools.dfltnextschool">schools.dfltnextschool</column>
+      <column column="schools.high_grade">schools.high_grade</column>
+      <column column="schools.hist_high_grade">schools.hist_high_grade</column>
+      <column column="schools.hist_low_grade">schools.hist_low_grade</column>
+      <column column="schools.id">schools.id</column>
+      <column column="schools.issummerschool">schools.issummerschool</column>
+      <column column="schools.low_grade">schools.low_grade</column>
+      <column column="schools.name">schools.name</column>
+      <column column="schools.principal">schools.principal</column>
+      <column column="schools.principalemail">schools.principalemail</column>
+      <column column="schools.principalphone">schools.principalphone</column>
+      <column column="schools.pscomm_path">schools.pscomm_path</column>
+      <column column="schools.schedulewhichschool">schools.schedulewhichschool</column>
+      <column column="schools.schooladdress">schools.schooladdress</column>
+      <column column="schools.schoolcategorycodesetid">schools.schoolcategorycodesetid</column>
+      <column column="schools.schoolcity">schools.schoolcity</column>
+      <column column="schools.schoolfax">schools.schoolfax</column>
+      <column column="schools.schoolgroup">schools.schoolgroup</column>
+      <column column="schools.schoolinfo_guid">schools.schoolinfo_guid</column>
+      <column column="schools.schoolphone">schools.schoolphone</column>
+      <column column="schools.schoolstate">schools.schoolstate</column>
+      <column column="schools.schoolzip">schools.schoolzip</column>
+      <column column="schools.school_number">schools.school_number</column>
+      <column column="schools.sortorder">schools.sortorder</column>
+      <column column="schools.sif_stateprid">schools.sif_stateprid</column>
+      <column column="schools.state_excludefromreporting">schools.state_excludefromreporting</column>
+      <column column="schools.sysemailfrom">schools.sysemailfrom</column>
+      <column column="schools.tchrlogentrto">schools.tchrlogentrto</column>
+    </columns>
+    <sql>
+      <![CDATA[
+      SELECT
+        schools.abbreviation,
+        schools.activecrslist,
+        schools.address,
+        schools.alternate_school_number,
+        schools.asstprincipalemail,
+        schools.asstprincipalphone,
+        schools.bulletinemail,
+        schools.countyname,
+        schools.countynbr,
+        schools.dcid,
+        schools.dfltnextschool,
+        schools.high_grade,
+        schools.hist_high_grade,
+        schools.hist_low_grade,
+        schools.id,
+        schools.issummerschool,
+        schools.low_grade,
+        schools.name,
+        schools.principal,
+        schools.principalemail,
+        schools.principalphone,
+        schools.pscomm_path,
+        schools.schedulewhichschool,
+        schools.schooladdress,
+        schools.schoolcategorycodesetid,
+        schools.schoolcity,
+        schools.schoolfax,
+        schools.schoolgroup,
+        schools.schoolinfo_guid,
+        schools.schoolphone,
+        schools.schoolstate,
+        schools.schoolzip,
+        schools.school_number,
+        schools.sortorder,
+        schools.sif_stateprid,
+        schools.state_excludefromreporting,
+        schools.sysemailfrom,
+        schools.tchrlogentrto
+      FROM
+        schools
+      ORDER BY schools.id
+      ]]>
+    </sql>
+  </query>
+  <query name="link.ed.api.terms" flattened="true" tags="">
+    <summary>Edlink Terms</summary>
+    <description>Edlink Terms Data</description>
+    <columns>
+      <column column="terms.abbreviation">terms.abbreviation</column>
+      <column column="terms.attendance_calculation_code">terms.attendance_calculation_code</column>
+      <column column="terms.autobuildbin">terms.autobuildbin</column>
+      <column column="terms.days_per_cycle">terms.days_per_cycle</column>
+      <column column="terms.dcid">terms.dcid</column>
+      <column column="terms.firstday">terms.firstday</column>
+      <column column="terms.id">terms.id</column>
+      <column column="terms.importmap">terms.importmap</column>
+      <column column="terms.isyearrec">terms.isyearrec</column>
+      <column column="terms.lastday">terms.lastday</column>
+      <column column="terms.name">terms.name</column>
+      <column column="terms.noofdays">terms.noofdays</column>
+      <column column="terms.periods_per_day">terms.periods_per_day</column>
+      <column column="terms.portion">terms.portion</column>
+      <column column="terms.schoolid">terms.schoolid</column>
+      <column column="terms.sterms">terms.sterms</column>
+      <column column="terms.suppresspublicview">terms.suppresspublicview</column>
+      <column column="terms.terminfo_guid">terms.terminfo_guid</column>
+      <column column="terms.termsinyear">terms.termsinyear</column>
+      <column column="terms.yearid">terms.yearid</column>
+      <column column="terms.yearlycredithrs">terms.yearlycredithrs</column>
+      <column column="termBins.date1">termBins.date1</column>
+      <column column="termBins.date2">termBins.date2</column>
+      <column column="termBins.description">termBins.description</column>
+      <column column="termBins.storeCode">termBins.storeCode</column>
+      <column column="termBins.termId">termBins.termId</column>
+    </columns>
+    <sql>
+      <![CDATA[
+      SELECT DISTINCT
+        terms.abbreviation,
+        terms.attendance_calculation_code,
+        terms.autobuildbin,
+        terms.days_per_cycle,
+        terms.dcid,
+        terms.firstday,
+        terms.id,
+        terms.importmap,
+        terms.isyearrec,
+        terms.lastday,
+        terms.name,
+        terms.noofdays,
+        terms.periods_per_day,
+        terms.portion,
+        terms.schoolid,
+        terms.sterms,
+        terms.suppresspublicview,
+        terms.terminfo_guid,
+        terms.termsinyear,
+        terms.yearid,
+        terms.yearlycredithrs,
+        termBins.date1,
+        termBins.date2,
+        termBins.description,
+        termBins.storeCode,
+        termBins.termId
+      FROM terms
+        LEFT JOIN termBins ON terms.id = termBins.termId
+      ORDER BY terms.id
+      ]]>
+    </sql>
+  </query>
+  <query name="link.ed.api.courses" flattened="true" tags="">
+    <summary>Edlink Courses</summary>
+    <description>Edlink Courses Data</description>
+    <columns>
+      <column column="courses.code">courses.code</column>
+      <column column="courses.corequisites">courses.corequisites</column>
+      <column column="courses.course_name">courses.course_name</column>
+      <column column="courses.course_number">courses.course_number</column>
+      <column column="courses.credit_hours">courses.credit_hours</column>
+      <column column="courses.credittype">courses.credittype</column>
+      <column column="courses.crhrweight">courses.crhrweight</column>
+      <column column="courses.dcid">courses.dcid</column>
+      <column column="courses.exclude_ada">courses.exclude_ada</column>
+      <column column="courses.excludefromclassrank">courses.excludefromclassrank</column>
+      <column column="courses.excludefromgpa">courses.excludefromgpa</column>
+      <column column="courses.excludefromhonorroll">courses.excludefromhonorroll</column>
+      <column column="courses.excludefromstoredgrades">courses.excludefromstoredgrades</column>
+      <column column="courses.gpa_addedvalue">courses.gpa_addedvalue</column>
+      <column column="courses.gradescaleid">courses.gradescaleid</column>
+      <column column="courses.id">courses.id</column>
+      <column column="courses.iscareertech">courses.iscareertech</column>
+      <column column="courses.isfitnesscourse">courses.isfitnesscourse</column>
+      <column column="courses.ispewaiver">courses.ispewaiver</column>
+      <column column="courses.maxclasssize">courses.maxclasssize</column>
+      <column column="courses.maxcredit">courses.maxcredit</column>
+      <column column="courses.multiterm">courses.multiterm</column>
+      <column column="courses.powerlink">courses.powerlink</column>
+      <column column="courses.powerlinkspan">courses.powerlinkspan</column>
+      <column column="courses.programid">courses.programid</column>
+      <column column="courses.prerequisitesvalue">courses.prerequisitesvalue</column>
+      <column column="courses.regavailable">courses.regavailable</column>
+      <column column="courses.regcoursegroup">courses.regcoursegroup</column>
+      <column column="courses.reggradelevels">courses.reggradelevels</column>
+      <column column="courses.regteachers">courses.regteachers</column>
+      <column column="courses.sched_balancepriority">courses.sched_balancepriority</column>
+      <column column="courses.sched_balanceterms">courses.sched_balanceterms</column>
+      <column column="courses.sched_blockstart">courses.sched_blockstart</column>
+      <column column="courses.sched_closesectionaftermax">courses.sched_closesectionaftermax</column>
+      <column column="courses.sched_concurrentflag">courses.sched_concurrentflag</column>
+      <column column="courses.sched_consecutiveperiods">courses.sched_consecutiveperiods</column>
+      <column column="courses.sched_consecutiveterms">courses.sched_consecutiveterms</column>
+      <column column="courses.sched_coursepackage">courses.sched_coursepackage</column>
+      <column column="courses.sched_coursepkgcontents">courses.sched_coursepkgcontents</column>
+      <column column="courses.sched_coursesubjectareacode">courses.sched_coursesubjectareacode</column>
+      <column column="courses.sched_department">courses.sched_department</column>
+      <column column="courses.sched_do_not_print">courses.sched_do_not_print</column>
+      <column column="courses.sched_extradayscheduletypecode">courses.sched_extradayscheduletypecode</column>
+      <column column="courses.sched_facilities">courses.sched_facilities</column>
+      <column column="courses.sched_frequency">courses.sched_frequency</column>
+      <column column="courses.sched_fullcatalogdescription">courses.sched_fullcatalogdescription</column>
+      <column column="courses.sched_globalsubstitution1">courses.sched_globalsubstitution1</column>
+      <column column="courses.sched_globalsubstitution2">courses.sched_globalsubstitution2</column>
+      <column column="courses.sched_globalsubstitution3">courses.sched_globalsubstitution3</column>
+      <column column="courses.sched_labflag">courses.sched_labflag</column>
+      <column column="courses.sched_labfrequency">courses.sched_labfrequency</column>
+      <column column="courses.sched_labperiodspermeeting">courses.sched_labperiodspermeeting</column>
+      <column column="courses.sched_lengthinnumberofterms">courses.sched_lengthinnumberofterms</column>
+      <column column="courses.sched_loadpriority">courses.sched_loadpriority</column>
+      <column column="courses.sched_loadtype">courses.sched_loadtype</column>
+      <column column="courses.sched_lunchcourse">courses.sched_lunchcourse</column>
+      <column column="courses.sched_maximumdayspercycle">courses.sched_maximumdayspercycle</column>
+      <column column="courses.sched_maximumenrollment">courses.sched_maximumenrollment</column>
+      <column column="courses.sched_maximumperiodsperday">courses.sched_maximumperiodsperday</column>
+      <column column="courses.sched_minimumdayspercycle">courses.sched_minimumdayspercycle</column>
+      <column column="courses.sched_minimumperiodsperday">courses.sched_minimumperiodsperday</column>
+      <column column="courses.sched_multiplerooms">courses.sched_multiplerooms</column>
+      <column column="courses.sched_periodspercycle">courses.sched_periodspercycle</column>
+      <column column="courses.sched_periodspermeeting">courses.sched_periodspermeeting</column>
+      <column column="courses.sched_repeatsallowed">courses.sched_repeatsallowed</column>
+      <column column="courses.sched_scheduled">courses.sched_scheduled</column>
+      <column column="courses.sched_scheduletypecode">courses.sched_scheduletypecode</column>
+      <column column="courses.sched_sectionsoffered">courses.sched_sectionsoffered</column>
+      <column column="courses.sched_substitutionallowed">courses.sched_substitutionallowed</column>
+      <column column="courses.sched_teachercount">courses.sched_teachercount</column>
+      <column column="courses.sched_usepreestablishedteams">courses.sched_usepreestablishedteams</column>
+      <column column="courses.sched_usesectiontypes">courses.sched_usesectiontypes</column>
+      <column column="courses.sched_validdaycombinations">courses.sched_validdaycombinations</column>
+      <column column="courses.sched_validstartperiods">courses.sched_validstartperiods</column>
+      <column column="courses.sched_year">courses.sched_year</column>
+      <column column="courses.schoolgroup">courses.schoolgroup</column>
+      <column column="courses.schoolid">courses.schoolid</column>
+      <column column="courses.sectionstooffer">courses.sectionstooffer</column>
+      <column column="courses.status">courses.status</column>
+      <column column="courses.targetclasssize">courses.targetclasssize</column>
+      <column column="courses.termsoffered">courses.termsoffered</column>
+      <column column="courses.validextradaycombinations">courses.validextradaycombinations</column>
+      <column column="courses.vocational">courses.vocational</column>
+    </columns>
+    <sql>
+      <![CDATA[
+      SELECT
+        courses.code,
+        courses.corequisites,
+        courses.course_name,
+        courses.course_number,
+        courses.credit_hours,
+        courses.credittype,
+        courses.crhrweight,
+        courses.dcid,
+        courses.exclude_ada,
+        courses.excludefromclassrank,
+        courses.excludefromgpa,
+        courses.excludefromhonorroll,
+        courses.excludefromstoredgrades,
+        courses.gpa_addedvalue,
+        courses.gradescaleid,
+        courses.id,
+        courses.iscareertech,
+        courses.isfitnesscourse,
+        courses.ispewaiver,
+        courses.maxclasssize,
+        courses.maxcredit,
+        courses.multiterm,
+        courses.powerlink,
+        courses.powerlinkspan,
+        courses.programid,
+        courses.prerequisitesvalue,
+        courses.regavailable,
+        courses.regcoursegroup,
+        courses.reggradelevels,
+        courses.regteachers,
+        courses.sched_balancepriority,
+        courses.sched_balanceterms,
+        courses.sched_blockstart,
+        courses.sched_closesectionaftermax,
+        courses.sched_concurrentflag,
+        courses.sched_consecutiveperiods,
+        courses.sched_consecutiveterms,
+        courses.sched_coursepackage,
+        courses.sched_coursepkgcontents,
+        courses.sched_coursesubjectareacode,
+        courses.sched_department,
+        courses.sched_do_not_print,
+        courses.sched_extradayscheduletypecode,
+        courses.sched_facilities,
+        courses.sched_frequency,
+        courses.sched_fullcatalogdescription,
+        courses.sched_globalsubstitution1,
+        courses.sched_globalsubstitution2,
+        courses.sched_globalsubstitution3,
+        courses.sched_labflag,
+        courses.sched_labfrequency,
+        courses.sched_labperiodspermeeting,
+        courses.sched_lengthinnumberofterms,
+        courses.sched_loadpriority,
+        courses.sched_loadtype,
+        courses.sched_lunchcourse,
+        courses.sched_maximumdayspercycle,
+        courses.sched_maximumenrollment,
+        courses.sched_maximumperiodsperday,
+        courses.sched_minimumdayspercycle,
+        courses.sched_minimumperiodsperday,
+        courses.sched_multiplerooms,
+        courses.sched_periodspercycle,
+        courses.sched_periodspermeeting,
+        courses.sched_repeatsallowed,
+        courses.sched_scheduled,
+        courses.sched_scheduletypecode,
+        courses.sched_sectionsoffered,
+        courses.sched_substitutionallowed,
+        courses.sched_teachercount,
+        courses.sched_usepreestablishedteams,
+        courses.sched_usesectiontypes,
+        courses.sched_validdaycombinations,
+        courses.sched_validstartperiods,
+        courses.sched_year,
+        courses.schoolgroup,
+        courses.schoolid,
+        courses.sectionstooffer,
+        courses.status,
+        courses.targetclasssize,
+        courses.termsoffered,
+        courses.validextradaycombinations,
+        courses.vocational
+      FROM
+        courses
+      ORDER BY courses.id
+      ]]>
+    </sql>
+  </query>
+  <query name="link.ed.api.sections" flattened="true" tags="">
+    <summary>Edlink Sections</summary>
+    <description>Edlink Sections Data</description>
+    <columns>
+      <column column="sections.attendance_type_code">sections.attendance_type_code</column>
+      <column column="sections.blockperiods_obsolete">sections.blockperiods_obsolete</column>
+      <column column="sections.buildid">sections.buildid</column>
+      <column column="sections.comment_value">sections.comment_value</column>
+      <column column="sections.course_number">sections.course_number</column>
+      <column column="sections.dcid">sections.dcid</column>
+      <column column="sections.dependent_secs">sections.dependent_secs</column>
+      <column column="sections.distuniqueid">sections.distuniqueid</column>
+      <column column="sections.excludefromclassrank">sections.excludefromclassrank</column>
+      <column column="sections.excludefromgpa">sections.excludefromgpa</column>
+      <column column="sections.excludefromhonorroll">sections.excludefromhonorroll</column>
+      <column column="sections.excludefromstoredgrades">sections.excludefromstoredgrades</column>
+      <column column="sections.exclude_ada">sections.exclude_ada</column>
+      <column column="sections.exclude_state_rpt_yn">sections.exclude_state_rpt_yn</column>
+      <column column="sections.expression">sections.expression</column>
+      <column column="sections.external_expression">sections.external_expression</column>
+      <column column="sections.fastperlist">sections.fastperlist</column>
+      <column column="sections.gradeprofile">sections.gradeprofile</column>
+      <column column="sections.gradescaleid">sections.gradescaleid</column>
+      <column column="sections.grade_level">sections.grade_level</column>
+      <column column="sections.gradebooktype">sections.gradebooktype</column>
+      <column column="sections.house">sections.house</column>
+      <column column="sections.id">sections.id</column>
+      <column column="sections.instruction_lang">sections.instruction_lang</column>
+      <column column="sections.lastattupdate">sections.lastattupdate</column>
+      <column column="sections.log">sections.log</column>
+      <column column="sections.maxcut">sections.maxcut</column>
+      <column column="sections.maxenrollment">sections.maxenrollment</column>
+      <column column="sections.max_load_status">sections.max_load_status</column>
+      <column column="sections.noofterms">sections.noofterms</column>
+      <column column="sections.no_of_students">sections.no_of_students</column>
+      <column column="sections.pgflags">sections.pgflags</column>
+      <column column="sections.pgversion">sections.pgversion</column>
+      <column column="sections.parent_section_id">sections.parent_section_id</column>
+      <column column="sections.period_obsolete">sections.period_obsolete</column>
+      <column column="sections.programid">sections.programid</column>
+      <column column="sections.room">sections.room</column>
+      <column column="sections.rostermodser">sections.rostermodser</column>
+      <column column="sections.schedulesectionid">sections.schedulesectionid</column>
+      <column column="sections.schoolid">sections.schoolid</column>
+      <column column="sections.sectioninfo_guid">sections.sectioninfo_guid</column>
+      <column column="sections.section_number">sections.section_number</column>
+      <column column="sections.section_type">sections.section_type</column>
+      <column column="sections.sortorder">sections.sortorder</column>
+      <column column="sections.teacher">sections.teacher</column>
+      <column column="sections.teacherdescr">sections.teacherdescr</column>
+      <column column="sections.team">sections.team</column>
+      <column column="sections.termid">sections.termid</column>
+      <column column="sections.trackteacheratt">sections.trackteacheratt</column>
+      <column column="sections.wheretaught">sections.wheretaught</column>
+      <column column="sections.wheretaughtdistrict">sections.wheretaughtdistrict</column>
+    </columns>
+    <sql>
+      <![CDATA[
+      SELECT
+        sections.attendance_type_code,
+        sections.blockperiods_obsolete,
+        sections.buildid,
+        sections.comment_value,
+        sections.course_number,
+        sections.dcid,
+        sections.dependent_secs,
+        sections.distuniqueid,
+        sections.excludefromclassrank,
+        sections.excludefromgpa,
+        sections.excludefromhonorroll,
+        sections.excludefromstoredgrades,
+        sections.exclude_ada,
+        sections.exclude_state_rpt_yn,
+        sections.expression,
+        sections.external_expression,
+        sections.fastperlist,
+        sections.gradeprofile,
+        sections.gradescaleid,
+        sections.grade_level,
+        sections.gradebooktype,
+        sections.house,
+        sections.id,
+        sections.instruction_lang,
+        sections.lastattupdate,
+        sections.log,
+        sections.maxcut,
+        sections.maxenrollment,
+        sections.max_load_status,
+        sections.noofterms,
+        sections.no_of_students,
+        sections.pgflags,
+        sections.pgversion,
+        sections.parent_section_id,
+        sections.period_obsolete,
+        sections.programid,
+        sections.room,
+        sections.rostermodser,
+        sections.schedulesectionid,
+        sections.schoolid,
+        sections.sectioninfo_guid,
+        sections.section_number,
+        sections.section_type,
+        sections.sortorder,
+        sections.teacher,
+        sections.teacherdescr,
+        sections.team,
+        sections.termid,
+        sections.trackteacheratt,
+        sections.wheretaught,
+        sections.wheretaughtdistrict
+      FROM
+        sections
+      ORDER BY sections.id
+      ]]>
+    </sql>
+  </query>
+  <query name="link.ed.api.students" flattened="true" tags="">
+    <summary>Edlink Students</summary>
+    <description>Edlink Students Data</description>
+    <columns>
+      <column column="students.alert_discipline">students.alert_discipline</column>
+      <column column="students.alert_disciplineexpires">students.alert_disciplineexpires</column>
+      <column column="students.alert_guardian">students.alert_guardian</column>
+      <column column="students.alert_guardianexpires">students.alert_guardianexpires</column>
+      <column column="students.alert_other">students.alert_other</column>
+      <column column="students.alert_otherexpires">students.alert_otherexpires</column>
+      <column column="students.allowwebaccess">students.allowwebaccess</column>
+      <column column="students.balance1">students.balance1</column>
+      <column column="students.balance2">students.balance2</column>
+      <column column="students.balance3">students.balance3</column>
+      <column column="students.bus_route">students.bus_route</column>
+      <column column="students.bus_stop">students.bus_stop</column>
+      <column column="students.city">students.city</column>
+      <column column="students.classof">students.classof</column>
+      <column column="students.cumulative_pct">students.cumulative_pct</column>
+      <column column="students.customrank_gpa">students.customrank_gpa</column>
+      <column column="students.dcid">students.dcid</column>
+      <column column="students.districtentrydate">students.districtentrydate</column>
+      <column column="students.districtofresidence">students.districtofresidence</column>
+      <column column="students.dob">students.dob</column>
+      <column column="students.doctor_name">students.doctor_name</column>
+      <column column="students.doctor_phone">students.doctor_phone</column>
+      <column column="students.emerg_contact_1">students.emerg_contact_1</column>
+      <column column="students.emerg_contact_2">students.emerg_contact_2</column>
+      <column column="students.emerg_phone_1">students.emerg_phone_1</column>
+      <column column="students.emerg_phone_2">students.emerg_phone_2</column>
+      <column column="students.enroll_status">students.enroll_status</column>
+      <column column="students.enrollment_schoolid">students.enrollment_schoolid</column>
+      <column column="students.enrollment_transfer_date_pend">students.enrollment_transfer_date_pend</column>
+      <column column="students.enrollmentcode">students.enrollmentcode</column>
+      <column column="students.enrollmentid">students.enrollmentid</column>
+      <column column="students.enrollmenttype">students.enrollmenttype</column>
+      <column column="students.entrycode">students.entrycode</column>
+      <column column="students.entrydate">students.entrydate</column>
+      <column column="students.ethnicity">students.ethnicity</column>
+      <column column="students.exclude_fr_rank">students.exclude_fr_rank</column>
+      <column column="students.exitcode">students.exitcode</column>
+      <column column="students.exitcomment">students.exitcomment</column>
+      <column column="students.exitdate">students.exitdate</column>
+      <column column="students.father">students.father</column>
+      <column column="students.father_studentcont_guid">students.father_studentcont_guid</column>
+      <column column="students.fedethnicity">students.fedethnicity</column>
+      <column column="students.fedracedecline">students.fedracedecline</column>
+      <column column="students.first_name">students.first_name</column>
+      <column column="students.fteid">students.fteid</column>
+      <column column="students.gender">students.gender</column>
+      <column column="students.geocode">students.geocode</column>
+      <column column="students.gpentryyear">students.gpentryyear</column>
+      <column column="students.grade_level">students.grade_level</column>
+      <column column="students.gradreqsetid">students.gradreqsetid</column>
+      <column column="students.graduated_rank">students.graduated_rank</column>
+      <column column="students.graduated_schoolid">students.graduated_schoolid</column>
+      <column column="students.graduated_schoolname">students.graduated_schoolname</column>
+      <column column="students.guardian_studentcont_guid">students.guardian_studentcont_guid</column>
+      <column column="students.guardianemail">students.guardianemail</column>
+      <column column="students.guardianfax">students.guardianfax</column>
+      <column column="students.home_phone">students.home_phone</column>
+      <column column="students.house">students.house</column>
+      <column column="students.id">students.id</column>
+      <column column="students.last_name">students.last_name</column>
+      <column column="students.lastfirst">students.lastfirst</column>
+      <column column="students.lastmeal">students.lastmeal</column>
+      <column column="students.ldapenabled">students.ldapenabled</column>
+      <column column="students.log">students.log</column>
+      <column column="students.lunch_id">students.lunch_id</column>
+      <column column="students.lunchstatus">students.lunchstatus</column>
+      <column column="students.mailing_city">students.mailing_city</column>
+      <column column="students.mailing_geocode">students.mailing_geocode</column>
+      <column column="students.mailing_state">students.mailing_state</column>
+      <column column="students.mailing_street">students.mailing_street</column>
+      <column column="students.mailing_zip">students.mailing_zip</column>
+      <column column="students.membershipshare">students.membershipshare</column>
+      <column column="students.middle_name">students.middle_name</column>
+      <column column="students.mother">students.mother</column>
+      <column column="students.mother_studentcont_guid">students.mother_studentcont_guid</column>
+      <column column="students.next_school">students.next_school</column>
+      <column column="students.person_id">students.person_id</column>
+      <column column="students.phone_id">students.phone_id</column>
+      <column column="students.photoflag">students.photoflag</column>
+      <column column="students.pl_language">students.pl_language</column>
+      <column column="students.sched_loadlock">students.sched_loadlock</column>
+      <column column="students.sched_lockstudentschedule">students.sched_lockstudentschedule</column>
+      <column column="students.sched_nextyearbuilding">students.sched_nextyearbuilding</column>
+      <column column="students.sched_nextyeargrade">students.sched_nextyeargrade</column>
+      <column column="students.sched_nextyearhouse">students.sched_nextyearhouse</column>
+      <column column="students.sched_nextyearteam">students.sched_nextyearteam</column>
+      <column column="students.sched_priority">students.sched_priority</column>
+      <column column="students.sched_scheduled">students.sched_scheduled</column>
+      <column column="students.sched_yearofgraduation">students.sched_yearofgraduation</column>
+      <column column="students.schoolentrydate">students.schoolentrydate</column>
+      <column column="students.schoolentrygradelevel">students.schoolentrygradelevel</column>
+      <column column="students.schoolid">students.schoolid</column>
+      <column column="students.simple_gpa">students.simple_gpa</column>
+      <column column="students.simple_pct">students.simple_pct</column>
+      <column column="students.state">students.state</column>
+      <column column="students.state_enrollflag">students.state_enrollflag</column>
+      <column column="students.state_excludefromreporting">students.state_excludefromreporting</column>
+      <column column="students.state_studentnumber">students.state_studentnumber</column>
+      <column column="students.street">students.street</column>
+      <column column="students.student_allowwebaccess">students.student_allowwebaccess</column>
+      <column column="students.student_number">students.student_number</column>
+      <column column="students.student_web_id">students.student_web_id</column>
+      <column column="students.studentpers_guid">students.studentpers_guid</column>
+      <column column="students.studentpict_guid">students.studentpict_guid</column>
+      <column column="students.studentschlenrl_guid">students.studentschlenrl_guid</column>
+      <column column="students.summerschoolid">students.summerschoolid</column>
+      <column column="students.summerschoolnote">students.summerschoolnote</column>
+      <column column="students.team">students.team</column>
+      <column column="students.track">students.track</column>
+      <column column="students.transfercomment">students.transfercomment</column>
+      <column column="students.tuitionpayer">students.tuitionpayer</column>
+      <column column="students.web_id">students.web_id</column>
+      <column column="students.withdrawal_reason_code">students.withdrawal_reason_code</column>
+      <column column="students.zip">students.zip</column>
+      <column column="studentrace.racecd">studentrace.racecd</column>
+      <column column="emailAddress.emailAddress">emailAddress.emailAddress</column>
+    </columns>
+    <sql>
+      <![CDATA[
+      SELECT
+        students.alert_discipline,
+        students.alert_disciplineexpires,
+        students.alert_guardian,
+        students.alert_guardianexpires,
+        students.alert_other,
+        students.alert_otherexpires,
+        students.allowwebaccess,
+        students.balance1,
+        students.balance2,
+        students.balance3,
+        students.bus_route,
+        students.bus_stop,
+        students.city,
+        students.classof,
+        students.cumulative_pct,
+        students.customrank_gpa,
+        students.dcid,
+        students.districtentrydate,
+        students.districtofresidence,
+        students.dob,
+        students.doctor_name,
+        students.doctor_phone,
+        students.emerg_contact_1,
+        students.emerg_contact_2,
+        students.emerg_phone_1,
+        students.emerg_phone_2,
+        students.enroll_status,
+        students.enrollment_schoolid,
+        students.enrollment_transfer_date_pend,
+        students.enrollmentcode,
+        students.enrollmentid,
+        students.enrollmenttype,
+        students.entrycode,
+        students.entrydate,
+        students.ethnicity,
+        students.exclude_fr_rank,
+        students.exitcode,
+        students.exitcomment,
+        students.exitdate,
+        students.father,
+        students.father_studentcont_guid,
+        students.fedethnicity,
+        students.fedracedecline,
+        students.first_name,
+        students.fteid,
+        students.gender,
+        students.geocode,
+        students.gpentryyear,
+        students.grade_level,
+        students.gradreqsetid,
+        students.graduated_rank,
+        students.graduated_schoolid,
+        students.graduated_schoolname,
+        students.guardian_studentcont_guid,
+        students.guardianemail,
+        students.guardianfax,
+        students.home_phone,
+        students.house,
+        students.id,
+        students.last_name,
+        students.lastfirst,
+        students.lastmeal,
+        students.ldapenabled,
+        students.log,
+        students.lunch_id,
+        students.lunchstatus,
+        students.mailing_city,
+        students.mailing_geocode,
+        students.mailing_state,
+        students.mailing_street,
+        students.mailing_zip,
+        students.membershipshare,
+        students.middle_name,
+        students.mother,
+        students.mother_studentcont_guid,
+        students.next_school,
+        students.person_id,
+        students.phone_id,
+        students.photoflag,
+        students.pl_language,
+        students.sched_loadlock,
+        students.sched_lockstudentschedule,
+        students.sched_nextyearbuilding,
+        students.sched_nextyeargrade,
+        students.sched_nextyearhouse,
+        students.sched_nextyearteam,
+        students.sched_priority,
+        students.sched_scheduled,
+        students.sched_yearofgraduation,
+        students.schoolentrydate,
+        students.schoolentrygradelevel,
+        students.schoolid,
+        students.simple_gpa,
+        students.simple_pct,
+        students.state,
+        students.state_enrollflag,
+        students.state_excludefromreporting,
+        students.state_studentnumber,
+        students.street,
+        students.student_allowwebaccess,
+        students.student_number,
+        students.student_web_id,
+        students.studentpers_guid,
+        students.studentpict_guid,
+        students.studentschlenrl_guid,
+        students.summerschoolid,
+        students.summerschoolnote,
+        students.team,
+        students.track,
+        students.transfercomment,
+        students.tuitionpayer,
+        students.web_id,
+        students.withdrawal_reason_code,
+        students.zip,
+        studentrace.racecd,
+        emailAddress.emailAddress
+      FROM
+        students
+          LEFT JOIN studentrace ON studentrace.studentid = students.id
+          LEFT JOIN personEmailAddressAssoc ON personEmailAddressAssoc.personId = students.person_id
+          LEFT JOIN emailAddress ON emailAddress.emailAddressId = personEmailAddressAssoc.emailAddressId
+      ORDER BY students.id
+      ]]>
+    </sql>
+  </query>
+  <query name="link.ed.api.staff" flattened="true" tags="">
+    <summary>Edlink Staff</summary>
+    <description>Edlink Staff Data</description>
+    <columns>
+      <column column="schoolStaff.id">schoolStaff.id</column>
+      <column column="schoolStaff.schoolId">schoolStaff.schoolId</column>
+      <column column="schoolStaff.staffStatus">schoolStaff.staffStatus</column>
+      <column column="schoolStaff.status">schoolStaff.status</column>
+      <column column="schoolStaff.users_dcid">schoolStaff.users_dcid</column>
+      <column column="schoolStaff.transaction_date">schoolStaff.transaction_date</column>
+      <column column="users.accessvalue">users.accessvalue</column>
+      <column column="users.adminldapenabled">users.adminldapenabled</column>
+      <column column="users.allowloginend">users.allowloginend</column>
+      <column column="users.allowloginstart">users.allowloginstart</column>
+      <column column="users.canchangeschool">users.canchangeschool</column>
+      <column column="users.city">users.city</column>
+      <column column="users.defaultstudscrn">users.defaultstudscrn</column>
+      <column column="users.email_addr">users.email_addr</column>
+      <column column="users.fedethnicity">users.fedethnicity</column>
+      <column column="users.fedracedecline">users.fedracedecline</column>
+      <column column="users.first_name">users.first_name</column>
+      <column column="users.gradebooktype">users.gradebooktype</column>
+      <column column="users.groupvalue">users.groupvalue</column>
+      <column column="users.homepage">users.homepage</column>
+      <column column="users.home_phone">users.home_phone</column>
+      <column column="users.homeroom">users.homeroom</column>
+      <column column="users.homeschoolid">users.homeschoolid</column>
+      <column column="users.ipaddrrestrict">users.ipaddrrestrict</column>
+      <column column="users.lastfirst">users.lastfirst</column>
+      <column column="users.lastmeal">users.lastmeal</column>
+      <column column="users.last_name">users.last_name</column>
+      <column column="users.lunch_id">users.lunch_id</column>
+      <column column="users.maximum_load">users.maximum_load</column>
+      <column column="users.middle_name">users.middle_name</column>
+      <column column="users.nameasimported">users.nameasimported</column>
+      <column column="users.photo">users.photo</column>
+      <column column="users.preferredname">users.preferredname</column>
+      <column column="users.psaccess">users.psaccess</column>
+      <column column="users.ptaccess">users.ptaccess</column>
+      <column column="users.school_phone">users.school_phone</column>
+      <column column="users.sif_stateprid">users.sif_stateprid</column>
+      <column column="users.staffpers_guid">users.staffpers_guid</column>
+      <column column="users.state">users.state</column>
+      <column column="users.street">users.street</column>
+      <column column="users.supportcontact">users.supportcontact</column>
+      <column column="users.teacherldapenabled">users.teacherldapenabled</column>
+      <column column="users.teachernumber">users.teachernumber</column>
+      <column column="users.title">users.title</column>
+      <column column="users.zip">users.zip</column>
+    </columns>
+    <sql>
+      <![CDATA[
+      SELECT
+        schoolStaff.id,
+        schoolStaff.schoolId,
+        schoolStaff.staffStatus,
+        schoolStaff.status,
+        schoolStaff.users_dcid,
+        schoolStaff.transaction_date,
+        users.accessvalue,
+        users.adminldapenabled,
+        users.allowloginend,
+        users.allowloginstart,
+        users.canchangeschool,
+        users.city,
+        users.defaultstudscrn,
+        users.email_addr,
+        users.fedethnicity,
+        users.fedracedecline,
+        users.first_name,
+        users.gradebooktype,
+        users.groupvalue,
+        users.homepage,
+        users.home_phone,
+        users.homeroom,
+        users.homeschoolid,
+        users.ipaddrrestrict,
+        users.lastfirst,
+        users.lastmeal,
+        users.last_name,
+        users.lunch_id,
+        users.maximum_load,
+        users.middle_name,
+        users.nameasimported,
+        users.photo,
+        users.preferredname,
+        users.psaccess,
+        users.ptaccess,
+        users.school_phone,
+        users.sif_stateprid,
+        users.staffpers_guid,
+        users.state,
+        users.street,
+        users.supportcontact,
+        users.teacherldapenabled,
+        users.teachernumber,
+        users.title,
+        users.zip
+      FROM
+        schoolStaff INNER JOIN users ON schoolStaff.users_dcid = users.dcid
+      ORDER BY schoolStaff.id
+      ]]>
+    </sql>
+  </query>
+  <query name="link.ed.api.enrollments" flattened="true" tags="">
+    <summary>Edlink Enrollments</summary>
+    <description>Edlink Enrollments Data</description>
+    <columns>
+      <column column="cc.attendance">cc.attendance</column>
+      <column column="cc.attendance_type_code">cc.attendance_type_code</column>
+      <column column="cc.log">cc.log</column>
+      <column column="cc.course_number">cc.course_number</column>
+      <column column="cc.currentabsences">cc.currentabsences</column>
+      <column column="cc.currenttardies">cc.currenttardies</column>
+      <column column="cc.dateenrolled">cc.dateenrolled</column>
+      <column column="cc.dateleft">cc.dateleft</column>
+      <column column="cc.dcid">cc.dcid</column>
+      <column column="cc.expression">cc.expression</column>
+      <column column="cc.finalgrades">cc.finalgrades</column>
+      <column column="cc.firstattdate">cc.firstattdate</column>
+      <column column="cc.id">cc.id</column>
+      <column column="cc.lastattmod">cc.lastattmod</column>
+      <column column="cc.lastgradeupdate">cc.lastgradeupdate</column>
+      <column column="cc.origsectionid">cc.origsectionid</column>
+      <column column="cc.period_obsolete">cc.period_obsolete</column>
+      <column column="cc.schoolid">cc.schoolid</column>
+      <column column="cc.sectionid">cc.sectionid</column>
+      <column column="cc.section_number">cc.section_number</column>
+      <column column="cc.studyear">cc.studyear</column>
+      <column column="cc.studentid">cc.studentid</column>
+      <column column="cc.studentsectenrl_guid">cc.studentsectenrl_guid</column>
+      <column column="cc.teachercomment">cc.teachercomment</column>
+      <column column="cc.teacherid">cc.teacherid</column>
+      <column column="cc.teacherprivatenote">cc.teacherprivatenote</column>
+      <column column="cc.termid">cc.termid</column>
+      <column column="psm_sectionenrollment.gradescaleid">psm_sectionenrollment.gradescaleid</column>
+      <column column="psm_sectionenrollment.sectionenrollmentstatus">
+        psm_sectionenrollment.sectionenrollmentstatus</column>
+      <column column="psm_sectionenrollment.teachernotifiedflag">
+        psm_sectionenrollment.teachernotifiedflag</column>
+    </columns>
+    <sql>
+      <![CDATA[
+      SELECT
+        cc.attendance,
+        cc.attendance_type_code,
+        cc.log,
+        cc.course_number,
+        cc.currentabsences,
+        cc.currenttardies,
+        cc.dateenrolled,
+        cc.dateleft,
+        cc.dcid,
+        cc.expression,
+        cc.finalgrades,
+        cc.firstattdate,
+        cc.id,
+        cc.lastattmod,
+        cc.lastgradeupdate,
+        cc.origsectionid,
+        cc.period_obsolete,
+        cc.schoolid,
+        cc.sectionid,
+        cc.section_number,
+        cc.studyear,
+        cc.studentid,
+        cc.studentsectenrl_guid,
+        cc.teachercomment,
+        cc.teacherid,
+        cc.teacherprivatenote,
+        cc.termid,
+        psm_sectionenrollment.gradescaleid,
+        psm_sectionenrollment.sectionenrollmentstatus,
+        psm_sectionenrollment.teachernotifiedflag
+      FROM
+        cc
+        LEFT JOIN psm_sectionenrollment ON cc.sectionid = psm_sectionenrollment.sectionid AND cc.studentid = psm_sectionenrollment.studentid
+      ORDER BY cc.id
+      ]]>
+    </sql>
+  </query>
+  <query name="link.ed.api.teacher_enrollments" flattened="true" tags="">
+    <summary>Edlink Teacher Enrollments</summary>
+    <description>Edlink Teacher Enrollments Data</description>
+    <columns>
+      <column column="sectionTeacher.end_date">sectionTeacher.end_date</column>
+      <column column="sectionTeacher.id">sectionTeacher.id</column>
+      <column column="sectionTeacher.roleId">sectionTeacher.roleId</column>
+      <column column="sectionTeacher.sectionId">sectionTeacher.sectionId</column>
+      <column column="sectionTeacher.start_date">sectionTeacher.start_date</column>
+      <column column="sectionTeacher.teacherId">sectionTeacher.teacherId</column>
+      <column column="sectionTeacher.transaction_date">sectionTeacher.transaction_date</column>
+      <column column="sectionTeacher.priorityOrder">sectionTeacher.priorityOrder</column>
+    </columns>
+    <sql>
+      <![CDATA[
+      SELECT
+        sectionTeacher.end_date,
+        sectionTeacher.id,
+        sectionTeacher.roleId,
+        sectionTeacher.sectionId,
+        sectionTeacher.start_date,
+        sectionTeacher.teacherId,
+        sectionTeacher.transaction_date,
+        sectionTeacher.priorityOrder
+      FROM
+        sectionTeacher
+      ORDER BY sectionTeacher.id
+      ]]>
+    </sql>
+  </query>
+  <query name="link.ed.api.config" flattened="true" tags="">
+    <columns>
+      <column column="configItem.configvalue">configItem.configvalue</column>
+      <column column="configItem.name">configItem.name</column>
+    </columns>
+    <sql>
+      <![CDATA[
+      SELECT
+        configItem.configvalue,
+        configItem.name
+      FROM
+        configItem
+      ORDER BY configItem.name
+      ]]>
+    </sql>
+  </query>
+  <query name="link.ed.api.guardian" flattened="true" tags="">
+    <columns>
+      <column column="guardian.accountidentifier">guardian.accountidentifier</column>
+      <column column="guardian.email">guardian.email</column>
+      <column column="guardian.firstname">guardian.firstname</column>
+      <column column="guardian.guardianid">guardian.guardianid</column>
+      <column column="guardian.isplatformmigrated">guardian.isplatformmigrated</column>
+      <column column="guardian.lastname">guardian.lastname</column>
+      <column column="guardian.middlename">guardian.middlename</column>
+      <column column="guardian.psguid">guardian.psguid</column>
+      <column column="guardian.state_guardiannumber">guardian.state_guardiannumber</column>
+      <column column="guardianstudent.studentsdcid">guardianstudent.studentsdcid</column>
+      <column column="guardianstudent.guardianrelationshiptypeid">
+        guardianstudent.guardianrelationshiptypeid</column>
+      <column column="guardianstudent.guardianstudentid">guardianstudent.guardianstudentid</column>
+      <column column="guardianrelationshiptype.sifrelationtostudent">
+        guardianrelationshiptype.sifrelationtostudent</column>
+    </columns>
+    <sql>
+      <![CDATA[ 
+      SELECT
+        guardian.accountidentifier,
+        guardian.email,
+        guardian.firstname,
+        guardian.guardianid,
+        guardian.isplatformmigrated,
+        guardian.lastname,
+        guardian.middlename,
+        guardian.psguid,
+        guardian.state_guardiannumber,
+        guardianstudent.studentsdcid,
+        guardianstudent.guardianrelationshiptypeid,
+        guardianstudent.guardianstudentid,
+        guardianrelationshiptype.sifrelationtostudent
+      FROM
+        guardian
+        LEFT JOIN guardianstudent ON guardian.guardianid = guardianstudent.guardianid
+        LEFT JOIN guardianrelationshiptype on guardianstudent.guardianrelationshiptypeid = guardianrelationshiptype.guardianrelationshiptypeid
+      ORDER BY guardian.guardianid
+      ]]>
+    </sql>
+  </query>
+  <query name="link.ed.api.guardians" flattened="true" tags="">
+    <columns>
+      <column column="guardians.alias">guardians.alias</column>
+      <column column="guardians.allowwebaccess">guardians.allowwebaccess</column>
+      <column column="guardians.classification">guardians.classification</column>
+      <column column="guardians.day_phone">guardians.day_phone</column>
+      <column column="guardians.dcid">guardians.dcid</column>
+      <column column="guardians.email">guardians.email</column>
+      <column column="guardians.evening_phone">guardians.evening_phone</column>
+      <column column="guardians.familyid">guardians.familyid</column>
+      <column column="guardians.fax">guardians.fax</column>
+      <column column="guardians.first_name">guardians.first_name</column>
+      <column column="guardians.id">guardians.id</column>
+      <column column="guardians.last_name">guardians.last_name</column>
+      <column column="guardians.lastfirst">guardians.lastfirst</column>
+      <column column="guardians.middle_name">guardians.middle_name</column>
+      <column column="guardians.relationship">guardians.relationship</column>
+      <column column="guardians.rolevalue">guardians.rolevalue</column>
+      <column column="guardians.status">guardians.status</column>
+      <column column="guardians.studentid">guardians.studentid</column>
+      <column column="guardians.tier">guardians.tier</column>
+      <column column="guardians.web_id">guardians.web_id</column>
+      <column column="guardians.webemail">guardians.webemail</column>
+    </columns>
+    <sql>
+      <![CDATA[
+      SELECT
+        guardians.alias,
+        guardians.allowwebaccess,
+        guardians.classification,
+        guardians.day_phone,
+        guardians.dcid,
+        guardians.email,
+        guardians.evening_phone,
+        guardians.familyid,
+        guardians.fax,
+        guardians.first_name,
+        guardians.id,
+        guardians.last_name,
+        guardians.lastfirst,
+        guardians.middle_name,
+        guardians.relationship,
+        guardians.rolevalue,
+        guardians.status,
+        guardians.studentid,
+        guardians.tier,
+        guardians.web_id,
+        guardians.webemail
+      FROM
+        guardians
+      ORDER BY guardians.id
+      ]]>
+    </sql>
+  </query>
+  <query name="link.ed.api.gen" flattened="true" tags="">
+    <columns>
+      <column column="gen.cat">gen.cat</column>
+      <column column="gen.date_value">gen.date_value</column>
+      <column column="gen.date2">gen.date2</column>
+      <column column="gen.dcid">gen.dcid</column>
+      <column column="gen.id">gen.id</column>
+      <column column="gen.log">gen.log</column>
+      <column column="gen.name">gen.name</column>
+      <column column="gen.powerlink">gen.powerlink</column>
+      <column column="gen.powerlinkspan">gen.powerlinkspan</column>
+      <column column="gen.schoolid">gen.schoolid</column>
+      <column column="gen.sortorder">gen.sortorder</column>
+      <column column="gen.spedindicator">gen.spedindicator</column>
+      <column column="gen.time1">gen.time1</column>
+      <column column="gen.time2">gen.time2</column>
+      <column column="gen.value">gen.value</column>
+      <column column="gen.value2">gen.value2</column>
+      <column column="gen.valueli">gen.valueli</column>
+      <column column="gen.valueli2">gen.valueli2</column>
+      <column column="gen.valueli3">gen.valueli3</column>
+      <column column="gen.valueli4">gen.valueli4</column>
+      <column column="gen.valuer">gen.valuer</column>
+      <column column="gen.valuer2">gen.valuer2</column>
+      <column column="gen.valuet">gen.valuet</column>
+      <column column="gen.valuet2">gen.valuet2</column>
+      <column column="gen.yearid">gen.yearid</column>
+    </columns>
+    <sql>
+      <![CDATA[
+      SELECT
+        gen.cat,
+        gen.date_value,
+        gen.date2,
+        gen.dcid,
+        gen.id,
+        gen.log,
+        gen.name,
+        gen.powerlink,
+        gen.powerlinkspan,
+        gen.schoolid,
+        gen.sortorder,
+        gen.spedindicator,
+        gen.time1,
+        gen.time2,
+        gen.value,
+        gen.value2,
+        gen.valueli,
+        gen.valueli2,
+        gen.valueli3,
+        gen.valueli4,
+        gen.valuer,
+        gen.valuer2,
+        gen.valuet,
+        gen.valuet2,
+        gen.yearid
+      FROM
+        gen
+      ORDER BY gen.id
+      ]]>
+    </sql>
+  </query>
+  <query name="link.ed.api.assets" flattened="true" tags="">
+    <columns>
+      <column column="asset.accesscode">asset.accesscode</column>
+      <column column="asset.assetdate">asset.assetdate</column>
+      <column column="asset.assettype">asset.assettype</column>
+      <column column="asset.author">asset.author</column>
+      <column column="asset.code">asset.code</column>
+      <column column="asset.dateadopted">asset.dateadopted</column>
+      <column column="asset.datediscontinued">asset.datediscontinued</column>
+      <column column="asset.description">asset.description</column>
+      <column column="asset.edition">asset.edition</column>
+      <column column="asset.extrasnote">asset.extrasnote</column>
+      <column column="asset.feeamount">asset.feeamount</column>
+      <column column="asset.format">asset.format</column>
+      <column column="asset.hasextras">asset.hasextras</column>
+      <column column="asset.id">asset.id</column>
+      <column column="asset.isactive">asset.isactive</column>
+      <column column="asset.isbn">asset.isbn</column>
+      <column column="asset.isconsumable">asset.isconsumable</column>
+      <column column="asset.manufacturer">asset.manufacturer</column>
+      <column column="asset.modelnum">asset.modelnum</column>
+      <column column="asset.name">asset.name</column>
+      <column column="asset.ncescode">asset.ncescode</column>
+      <column column="asset.note">asset.note</column>
+      <column column="asset.partnum">asset.partnum</column>
+      <column column="asset.publisher">asset.publisher</column>
+      <column column="asset.purchasecost">asset.purchasecost</column>
+      <column column="asset.revision">asset.revision</column>
+      <column column="asset.sifcode">asset.sifcode</column>
+      <column column="asset.statecode">asset.statecode</column>
+      <column column="asset.upc">asset.upc</column>
+      <column column="asset.url">asset.url</column>
+      <column column="assetcourseassoc.assetid">assetcourseassoc.assetid</column>
+      <column column="assetcourseassoc.coursesdcid">assetcourseassoc.coursesdcid</column>
+      <column column="courses.id">courses_id</column>
+      <column column="courses.course_number">course_number</column>
+    </columns>
+    <sql>
+      <![CDATA[
+      SELECT
+        asset.accesscode,
+        asset.assetdate,
+        asset.assettype,
+        asset.author,
+        asset.code,
+        asset.dateadopted,
+        asset.datediscontinued,
+        asset.description,
+        asset.edition,
+        asset.extrasnote,
+        asset.feeamount,
+        asset.format,
+        asset.hasextras,
+        asset.id,
+        asset.isactive,
+        asset.isbn,
+        asset.isconsumable,
+        asset.manufacturer,
+        asset.modelnum,
+        asset.name,
+        asset.ncescode,
+        asset.note,
+        asset.partnum,
+        asset.publisher,
+        asset.purchasecost,
+        asset.revision,
+        asset.sifcode,
+        asset.statecode,
+        asset.upc,
+        asset.url,
+        assetcourseassoc.assetid,
+        assetcourseassoc.coursesdcid,
+        courses.id as courses_id,
+        courses.course_number
+      FROM asset
+        LEFT JOIN assetcourseassoc ON asset.id = assetcourseassoc.assetid
+        LEFT JOIN courses ON assetcourseassoc.coursesdcid = courses.dcid
+      ORDER BY asset.id
+      ]]>
+    </sql>
+  </query>
+
+  <query name="link.ed.api.districtcalendars" flattened="true" tags="">
+    <columns>
+      <column column="districtcalendar.calendarname">districtcalendar.calendarname</column>
+      <column column="districtcalendar.calendaryear">districtcalendar.calendaryear</column>
+      <column column="districtcalendar.enddate">districtcalendar.enddate</column>
+      <column column="districtcalendar.id">districtcalendar.id</column>
+      <column column="districtcalendar.startdate">districtcalendar.startdate</column>
+    </columns>
+    <sql>
+      <![CDATA[
+      SELECT
+        districtcalendar.calendarname,
+        districtcalendar.calendaryear,
+        districtcalendar.enddate,
+        districtcalendar.id,
+        districtcalendar.startdate
+      FROM districtcalendar
+      ORDER BY districtcalendar.id
+      ]]>
+    </sql>
+  </query>
+
+  <query name="link.ed.api.districtcalendardays" flattened="true" tags="">
+    <columns>
+      <column column="districtcalendarday.districtbellscheduleid">
+        districtcalendarday.districtbellscheduleid</column>
+      <column column="districtcalendarday.districtcalendarid">districtcalendarday.districtcalendarid</column>
+      <column column="districtcalendarday.districtcycledayid">districtcalendarday.districtcycledayid</column>
+      <column column="districtcalendarday.id">districtcalendarday.id</column>
+      <column column="districtcalendarday.insession">districtcalendarday.insession</column>
+      <column column="districtcalendarday.membershipvalue">districtcalendarday.membershipvalue</column>
+      <column column="districtcalendarday.note">districtcalendarday.note</column>
+      <column column="districtcalendarday.type">districtcalendarday.type</column>
+      <column column="districtcalendarday.a">districtcalendarday.a</column>
+      <column column="districtcalendarday.b">districtcalendarday.b</column>
+      <column column="districtcalendarday.c">districtcalendarday.c</column>
+      <column column="districtcalendarday.d">districtcalendarday.d</column>
+      <column column="districtcalendarday.e">districtcalendarday.e</column>
+      <column column="districtcalendarday.f">districtcalendarday.f</column>
+    </columns>
+    <sql>
+      <![CDATA[
+      SELECT
+        districtcalendarday.districtbellscheduleid,
+        districtcalendarday.districtcalendarid,
+        districtcalendarday.districtcycledayid,
+        districtcalendarday.id,
+        districtcalendarday.insession,
+        districtcalendarday.membershipvalue,
+        districtcalendarday.note,
+        districtcalendarday.type,
+        districtcalendarday.a,
+        districtcalendarday.b,
+        districtcalendarday.c,
+        districtcalendarday.d,
+        districtcalendarday.e,
+        districtcalendarday.f
+      FROM districtcalendarday
+      ORDER BY districtcalendarday.id
+      ]]>
+    </sql>
+  </query>
+  <query name="link.ed.api.calendars" flattened="true" tags="">
+    <columns>
+      <column column="calendar.code">calendar.code</column>
+      <column column="calendar.date1">calendar.date1</column>
+      <column column="calendar.date2">calendar.date2</column>
+      <column column="calendar.daysinrange">calendar.daysinrange</column>
+      <column column="calendar.dcid">calendar.dcid</column>
+      <column column="calendar.description">calendar.description</column>
+      <column column="calendar.id">calendar.id</column>
+      <column column="calendar.schoolid">calendar.schoolid</column>
+      <column column="calendar.unused1">calendar.unused1</column>
+      <column column="calendar.yearid">calendar.yearid</column>
+    </columns>
+    <sql>
+      <![CDATA[
+      SELECT
+        calendar.code,
+        calendar.date1,
+        calendar.date2,
+        calendar.daysinrange,
+        calendar.dcid,
+        calendar.description,
+        calendar.id,
+        calendar.schoolid,
+        calendar.unused1,
+        calendar.yearid
+      FROM calendar
+      ORDER BY calendar.id
+      ]]>
+    </sql>
+  </query>
+  <query name="link.ed.api.calendar_days" flattened="true" tags="">
+    <columns>
+      <column column="calendar_day.a">calendar_day.a</column>
+      <column column="calendar_day.b">calendar_day.b</column>
+      <column column="calendar_day.bell_schedule_id">calendar_day.bell_schedule_id</column>
+      <column column="calendar_day.c">calendar_day.c</column>
+      <column column="calendar_day.cycle_day_id">calendar_day.cycle_day_id</column>
+      <column column="calendar_day.d">calendar_day.d</column>
+      <column column="calendar_day.date_value">calendar_day.date_value</column>
+      <column column="calendar_day.dcid">calendar_day.dcid</column>
+      <column column="calendar_day.e">calendar_day.e</column>
+      <column column="calendar_day.f">calendar_day.f</column>
+      <column column="calendar_day.id">calendar_day.id</column>
+      <column column="calendar_day.insession">calendar_day.insession</column>
+      <column column="calendar_day.membershipvalue">calendar_day.membershipvalue</column>
+      <column column="calendar_day.note">calendar_day.note</column>
+      <column column="calendar_day.scheduleid">calendar_day.scheduleid</column>
+      <column column="calendar_day.schoolid">calendar_day.schoolid</column>
+      <column column="calendar_day.type">calendar_day.type</column>
+      <column column="calendar_day.week_num">calendar_day.week_num</column>
+
+    </columns>
+    <sql>
+      <![CDATA[
+      SELECT
+        calendar_day.a,
+        calendar_day.b,
+        calendar_day.bell_schedule_id,
+        calendar_day.c,
+        calendar_day.cycle_day_id,
+        calendar_day.d,
+        calendar_day.date_value,
+        calendar_day.dcid,
+        calendar_day.e,
+        calendar_day.f,
+        calendar_day.id,
+        calendar_day.insession,
+        calendar_day.membershipvalue,
+        calendar_day.note,
+        calendar_day.scheduleid,
+        calendar_day.schoolid,
+        calendar_day.type,
+        calendar_day.week_num
+      FROM calendar_day
+      ORDER BY calendar_day.id
+      ]]>
+    </sql>
+  </query>
+
+  <query name="link.ed.api.departments" flattened="true" tags="">
+    <columns>
+      <column column="department.dcid">department.dcid</column>
+      <column column="department.description">department.description</column>
+      <column column="department.id">department.id</column>
+      <column column="department.schoolid">department.schoolid</column>
+    </columns>
+    <sql>
+      <![CDATA[
+      SELECT
+        department.dcid,
+        department.description,
+        department.id,
+        department.schoolid
+      FROM department
+      ORDER BY department.id
+      ]]>
+    </sql>
+  </query>
+  <query name="link.ed.api.facilities" flattened="true" tags="">
+    <columns>
+      <column column="facility.dcid">facility.dcid</column>
+      <column column="facility.description">facility.description</column>
+      <column column="facility.id">facility.id</column>
+      <column column="facility.schoolid">facility.schoolid</column>
+    </columns>
+    <sql>
+      <![CDATA[
+      SELECT
+        facility.dcid,
+        facility.description,
+        facility.id,
+        facility.schoolid
+      FROM facility
+      ORDER BY facility.id
+      ]]>
+    </sql>
+  </query>
+  <query name="link.ed.api.fees" flattened="true" tags="">
+    <columns>
+      <column column="fee.adjustment">fee.adjustment</column>
+      <column column="fee.course_name">fee.course_name</column>
+      <column column="fee.course_number">fee.course_number</column>
+      <column column="fee.creationdate">fee.creationdate</column>
+      <column column="fee.date_value">fee.date_value</column>
+      <column column="fee.datetime">fee.datetime</column>
+      <column column="fee.dcid">fee.dcid</column>
+      <column column="fee.department_name">fee.department_name</column>
+      <column column="fee.description">fee.description</column>
+      <column column="fee.fee_amount">fee.fee_amount</column>
+      <column column="fee.fee_balance">fee.fee_balance</column>
+      <column column="fee.fee_category_name">fee.fee_category_name</column>
+      <column column="fee.feecharged">fee.feecharged</column>
+      <column column="fee.fee_paid">fee.fee_paid</column>
+      <column column="fee.fee_type_id">fee.fee_type_id</column>
+      <column column="fee.fee_type_name">fee.fee_type_name</column>
+      <column column="fee.group_transaction_id">fee.group_transaction_id</column>
+      <column column="fee.id">fee.id</column>
+      <column column="fee.internal_info_for_trigger">fee.internal_info_for_trigger</column>
+      <column column="fee.modificationdate">fee.modificationdate</column>
+      <column column="fee.originalfee">fee.originalfee</column>
+      <column column="fee.priority">fee.priority</column>
+      <column column="fee.pro_rated">fee.pro_rated</column>
+      <column column="fee.schoolfee_id">fee.schoolfee_id</column>
+      <column column="fee.schoolid">fee.schoolid</column>
+      <column column="fee.studentid">fee.studentid</column>
+      <column column="fee.system_user_id">fee.system_user_id</column>
+      <column column="fee.teacherid">fee.teacherid</column>
+      <column column="fee.termid">fee.termid</column>
+      <column column="fee.time">fee.time</column>
+      <column column="fee.yearid">fee.yearid</column>
+    </columns>
+    <sql>
+    <![CDATA[
+    SELECT
+      fee.adjustment,
+      fee.course_name,
+      fee.course_number,
+      fee.creationdate,
+      fee.date_value,
+      fee.datetime,
+      fee.dcid,
+      fee.department_name,
+      fee.description,
+      fee.fee_amount,
+      fee.fee_balance,
+      fee.fee_category_name,
+      fee.feecharged,
+      fee.fee_paid,
+      fee.fee_type_id,
+      fee.fee_type_name,
+      fee.group_transaction_id,
+      fee.id,
+      fee.internal_info_for_trigger,
+      fee.modificationdate,
+      fee.originalfee,
+      fee.priority,
+      fee.pro_rated,
+      fee.schoolfee_id,
+      fee.schoolid,
+      fee.studentid,
+      fee.system_user_id,
+      fee.teacherid,
+      fee.termid,
+      fee.time,
+      fee.yearid
+    FROM fee
+    ORDER BY fee.id
+    ]]>
+    </sql>
+  </query>
+  <query name="link.ed.api.incidents" flattened="true" tags="">
+    <columns>
+      <column column="incident.created_by">incident.created_by</column>
+      <column column="incident.created_ts">incident.created_ts</column>
+      <column column="incident.entry_author">incident.entry_author</column>
+      <column column="incident.financial_impact">incident.financial_impact</column>
+      <column column="incident.incident_detail_desc">incident.incident_detail_desc</column>
+      <column column="incident.incident_id">incident.incident_id</column>
+      <column column="incident.incident_reference_value">incident.incident_reference_value</column>
+      <column column="incident.incident_title">incident.incident_title</column>
+      <column column="incident.incident_ts">incident.incident_ts</column>
+      <column column="incident.isteacherreferral">incident.isteacherreferral</column>
+      <column column="incident.last_modified_by">incident.last_modified_by</column>
+      <column column="incident.last_modified_ts">incident.last_modified_ts</column>
+      <column column="incident.location_details">incident.location_details</column>
+      <column column="incident.school_number">incident.school_number</column>
+    </columns>
+    <sql>
+      <![CDATA[
+      SELECT
+        incident.created_by,
+        incident.created_ts,
+        incident.entry_author,
+        incident.financial_impact,
+        incident.incident_detail_desc,
+        incident.incident_id,
+        incident.incident_reference_value,
+        incident.incident_title,
+        incident.incident_ts,
+        incident.isteacherreferral,
+        incident.last_modified_by,
+        incident.last_modified_ts,
+        incident.location_details,
+        incident.school_number
+      FROM incident
+      ORDER BY incident.incident_id
+      ]]>
+    </sql>
+  </query>
+  <query name="link.ed.api.periods" flattened="true" tags="">
+    <columns>
+      <column column="period.abbreviation">period.abbreviation</column>
+      <column column="period.dcid">period.dcid</column>
+      <column column="period.id">period.id</column>
+      <column column="period.name">period.name</column>
+      <column column="period.period_number">period.period_number</column>
+      <column column="period.schoolid">period.schoolid</column>
+      <column column="period.sort_order">period.sort_order</column>
+      <column column="period.year_id">period.year_id</column>
+    </columns>
+    <sql>
+      <![CDATA[
+      SELECT
+        period.abbreviation,
+        period.dcid,
+        period.id,
+        period.name,
+        period.period_number,
+        period.schoolid,
+        period.sort_order,
+        period.year_id
+      FROM period
+      ORDER BY period.id
+      ]]>
+    </sql>
+  </query>
+  <query name="link.ed.api.rooms" flattened="true" tags="">
+    <columns>
+      <column column="room.building">room.building</column>
+      <column column="room.dcid">room.dcid</column>
+      <column column="room.department">room.department</column>
+      <column column="room.facilities">room.facilities</column>
+      <column column="room.house">room.house</column>
+      <column column="room.id">room.id</column>
+      <column column="room.name">room.name</column>
+      <column column="room.occupancy_maximum">room.occupancy_maximum</column>
+      <column column="room.room_number">room.room_number</column>
+      <column column="room.schoolid">room.schoolid</column>
+    </columns>
+    <sql>
+      <![CDATA[
+      SELECT
+        room.building,
+        room.dcid,
+        room.department,
+        room.facilities,
+        room.house,
+        room.id,
+        room.name,
+        room.occupancy_maximum,
+        room.room_number,
+        room.schoolid
+      FROM room
+      ORDER BY room.id
+      ]]>
+    </sql>
+  </query>
+  <query name="link.ed.api.transportations" flattened="true" tags="">
+    <columns>
+      <column column="transportation.address">transportation.address</column>
+      <column column="transportation.arrivaltime">transportation.arrivaltime</column>
+      <column column="transportation.busnumber">transportation.busnumber</column>
+      <column column="transportation.contactnumber">transportation.contactnumber</column>
+      <column column="transportation.dcid">transportation.dcid</column>
+      <column column="transportation.departuretime">transportation.departuretime</column>
+      <column column="transportation.description">transportation.description</column>
+      <column column="transportation.distance">transportation.distance</column>
+      <column column="transportation.distanceindicator">transportation.distanceindicator</column>
+      <column column="transportation.drivername">transportation.drivername</column>
+      <column column="transportation.enddate">transportation.enddate</column>
+      <column column="transportation.friday">transportation.friday</column>
+      <column column="transportation.fromto">transportation.fromto</column>
+      <column column="transportation.id">transportation.id</column>
+      <column column="transportation.linkingcode">transportation.linkingcode</column>
+      <column column="transportation.monday">transportation.monday</column>
+      <column column="transportation.routenumber">transportation.routenumber</column>
+      <column column="transportation.saturday">transportation.saturday</column>
+      <column column="transportation.schoolid">transportation.schoolid</column>
+      <column column="transportation.specialinstructions">transportation.specialinstructions</column>
+      <column column="transportation.startdate">transportation.startdate</column>
+      <column column="transportation.stopnumber">transportation.stopnumber</column>
+      <column column="transportation.studentid">transportation.studentid</column>
+      <column column="transportation.sunday">transportation.sunday</column>
+      <column column="transportation.thursday">transportation.thursday</column>
+      <column column="transportation.tuesday">transportation.tuesday</column>
+      <column column="transportation.type">transportation.type</column>
+      <column column="transportation.wednesday">transportation.wednesday</column>
+    </columns>
+    <sql>
+      <![CDATA[
+      SELECT
+        transportation.address,
+        transportation.arrivaltime,
+        transportation.busnumber,
+        transportation.contactnumber,
+        transportation.dcid,
+        transportation.departuretime,
+        transportation.description,
+        transportation.distance,
+        transportation.distanceindicator,
+        transportation.drivername,
+        transportation.enddate,
+        transportation.friday,
+        transportation.fromto,
+        transportation.id,
+        transportation.linkingcode,
+        transportation.monday,
+        transportation.routenumber,
+        transportation.saturday,
+        transportation.schoolid,
+        transportation.specialinstructions,
+        transportation.startdate,
+        transportation.stopnumber,
+        transportation.studentid,
+        transportation.sunday,
+        transportation.thursday,
+        transportation.tuesday,
+        transportation.type,
+        transportation.wednesday
+      FROM transportation
+      ORDER BY transportation.id
+      ]]>
+    </sql>
+  </query>
+  <query name="link.ed.api.assignmentcategories" flattened="true" tags="">
+    <columns>
+      <column column="psm_assignmentcategory.abbreviation">psm_assignmentcategory.abbreviation</column>
+      <column column="psm_assignmentcategory.contentgroupid">psm_assignmentcategory.contentgroupid</column>
+      <column column="psm_assignmentcategory.defaultextracreditpoints">
+        psm_assignmentcategory.defaultextracreditpoints</column>
+      <column column="psm_assignmentcategory.defaultpoints">psm_assignmentcategory.defaultpoints</column>
+      <column column="psm_assignmentcategory.defaultscoretype">
+        psm_assignmentcategory.defaultscoretype</column>
+      <column column="psm_assignmentcategory.description">psm_assignmentcategory.description</column>
+      <column column="psm_assignmentcategory.id">psm_assignmentcategory.id</column>
+      <column column="psm_assignmentcategory.includeinfinalgrades">
+        psm_assignmentcategory.includeinfinalgrades</column>
+      <column column="psm_assignmentcategory.name">psm_assignmentcategory.name</column>
+    </columns>
+    <sql>
+      <![CDATA[
+      SELECT
+        psm_assignmentcategory.abbreviation,
+        psm_assignmentcategory.contentgroupid,
+        psm_assignmentcategory.defaultextracreditpoints,
+        psm_assignmentcategory.defaultpoints,
+        psm_assignmentcategory.defaultscoretype,
+        psm_assignmentcategory.description,
+        psm_assignmentcategory.id,
+        psm_assignmentcategory.includeinfinalgrades,
+        psm_assignmentcategory.name
+      FROM psm_assignmentcategory
+      ORDER BY psm_assignmentcategory.id
+      ]]>
+    </sql>
+  </query>
+  <query name="link.ed.api.assignmentsections" flattened="true" tags="">
+    <columns>
+      <column column="assignmentsection.assignmentid">assignmentsection.assignmentid</column>
+      <column column="assignmentsection.assignmentsectionid">assignmentsection.assignmentsectionid</column>
+      <column column="assignmentsection.description">assignmentsection.description</column>
+      <column column="assignmentsection.duedate">assignmentsection.duedate</column>
+      <column column="assignmentsection.extracreditpoints">assignmentsection.extracreditpoints</column>
+      <column column="assignmentsection.iscountedinfinalgrade">
+        assignmentsection.iscountedinfinalgrade</column>
+      <column column="assignmentsection.isscorespublish">assignmentsection.isscorespublish</column>
+      <column column="assignmentsection.isscoringneeded">assignmentsection.isscoringneeded</column>
+      <column column="assignmentsection.maxretakeallowed">assignmentsection.maxretakeallowed</column>
+      <column column="assignmentsection.name">assignmentsection.name</column>
+      <column column="assignmentsection.publishdaysbeforedue">assignmentsection.publishdaysbeforedue</column>
+      <column column="assignmentsection.publisheddate">assignmentsection.publisheddate</column>
+      <column column="assignmentsection.publishedscoretypeid">assignmentsection.publishedscoretypeid</column>
+      <column column="assignmentsection.publishonspecificdate">
+        assignmentsection.publishonspecificdate</column>
+      <column column="assignmentsection.publishoption">assignmentsection.publishoption</column>
+      <column column="assignmentsection.relatedgradescaleitemdcid">
+        assignmentsection.relatedgradescaleitemdcid</column>
+      <column column="assignmentsection.scoreentrypoints">assignmentsection.scoreentrypoints</column>
+      <column column="assignmentsection.scoretype">assignmentsection.scoretype</column>
+      <column column="assignmentsection.sectionsdcid">assignmentsection.sectionsdcid</column>
+      <column column="assignmentsection.totalpointvalue">assignmentsection.totalpointvalue</column>
+      <column column="assignmentsection.weight">assignmentsection.weight</column>
+      <column column="assignmentsection.yearid">assignmentsection.yearid</column>
+      <column column="assignmentsection.transaction_date">assignmentsection.transaction_date</column>
+      <column column="assignmentcategoryassoc.teachercategoryid">
+        assignmentcategoryassoc.teachercategoryid</column>
+    </columns>
+    <sql>
+      <![CDATA[
+      SELECT
+        assignmentsection.assignmentid,
+        assignmentsection.assignmentsectionid,
+        assignmentsection.description,
+        assignmentsection.duedate,
+        assignmentsection.extracreditpoints,
+        assignmentsection.iscountedinfinalgrade,
+        assignmentsection.isscorespublish,
+        assignmentsection.isscoringneeded,
+        assignmentsection.maxretakeallowed,
+        assignmentsection.name,
+        assignmentsection.publishdaysbeforedue,
+        assignmentsection.publisheddate,
+        assignmentsection.publishedscoretypeid,
+        assignmentsection.publishonspecificdate,
+        assignmentsection.publishoption,
+        assignmentsection.relatedgradescaleitemdcid,
+        assignmentsection.scoreentrypoints,
+        assignmentsection.scoretype,
+        assignmentsection.sectionsdcid,
+        assignmentsection.totalpointvalue,
+        assignmentsection.weight,
+        assignmentsection.yearid,
+        assignmentsection.transaction_date,
+        assignmentcategoryassoc.teachercategoryid
+      FROM assignmentsection
+      LEFT JOIN assignmentcategoryassoc ON assignmentsection.assignmentsectionid = assignmentcategoryassoc.assignmentsectionid
+      ORDER BY assignmentsection.assignmentsectionid
+      ]]>
+    </sql>
+  </query>
+  <query name="link.ed.api.assignmentscores" flattened="true" tags="">
+    <columns>
+      <column column="assignmentscore.actualscoreentered">assignmentscore.actualscoreentered</column>
+      <column column="assignmentscore.actualscoregradescaledcid">
+        assignmentscore.actualscoregradescaledcid</column>
+      <column column="assignmentscore.actualscorekind">assignmentscore.actualscorekind</column>
+      <column column="assignmentscore.altalphagrade">assignmentscore.altalphagrade</column>
+      <column column="assignmentscore.altnumericgrade">assignmentscore.altnumericgrade</column>
+      <column column="assignmentscore.altscoregradescaledcid">assignmentscore.altscoregradescaledcid</column>
+      <column column="assignmentscore.assignmentscoreid">assignmentscore.assignmentscoreid</column>
+      <column column="assignmentscore.assignmentsectionid">assignmentscore.assignmentsectionid</column>
+      <column column="assignmentscore.hasretake">assignmentscore.hasretake</column>
+      <column column="assignmentscore.isabsent">assignmentscore.isabsent</column>
+      <column column="assignmentscore.iscollected">assignmentscore.iscollected</column>
+      <column column="assignmentscore.isexempt">assignmentscore.isexempt</column>
+      <column column="assignmentscore.isincomplete">assignmentscore.isincomplete</column>
+      <column column="assignmentscore.islate">assignmentscore.islate</column>
+      <column column="assignmentscore.ismissing">assignmentscore.ismissing</column>
+      <column column="assignmentscore.scoreentrydate">assignmentscore.scoreentrydate</column>
+      <column column="assignmentscore.scoregradescaledcid">assignmentscore.scoregradescaledcid</column>
+      <column column="assignmentscore.scorelettergrade">assignmentscore.scorelettergrade</column>
+      <column column="assignmentscore.scorenumericgrade">assignmentscore.scorenumericgrade</column>
+      <column column="assignmentscore.scorepercent">assignmentscore.scorepercent</column>
+      <column column="assignmentscore.scorepoints">assignmentscore.scorepoints</column>
+      <column column="assignmentscore.studentsdcid">assignmentscore.studentsdcid</column>
+      <column column="assignmentscore.yearid">assignmentscore.yearid</column>
+      <column column="assignmentscore.transaction_date">assignmentscore.transaction_date</column>
+      <column column="assignmentsection.assignmentid">assignmentsection.assignmentid</column>
+      <column column="students.id">students.studentid</column>
+    </columns>
+    <sql>
+      <![CDATA[
+      SELECT
+         assignmentscore.actualscoreentered,
+         assignmentscore.actualscoregradescaledcid,
+         assignmentscore.actualscorekind,
+         assignmentscore.altalphagrade,
+         assignmentscore.altnumericgrade,
+         assignmentscore.altscoregradescaledcid,
+         assignmentscore.assignmentscoreid,
+         assignmentscore.assignmentsectionid,
+         assignmentscore.hasretake,
+         assignmentscore.isabsent,
+         assignmentscore.iscollected,
+         assignmentscore.isexempt,
+         assignmentscore.isincomplete,
+         assignmentscore.islate,
+         assignmentscore.ismissing,
+         assignmentscore.scoreentrydate,
+         assignmentscore.scoregradescaledcid,
+         assignmentscore.scorelettergrade,
+         assignmentscore.scorenumericgrade,
+         assignmentscore.scorepercent,
+         assignmentscore.scorepoints,
+         assignmentscore.studentsdcid,
+         assignmentscore.yearid,
+         assignmentscore.transaction_date,
+         assignmentsection.assignmentid,
+         students.id as studentid
+      FROM assignmentscore
+      LEFT JOIN assignmentsection ON assignmentscore.assignmentsectionid = assignmentsection.assignmentsectionid
+      LEFT JOIN students ON assignmentscore.studentsdcid = students.dcid
+      ORDER BY assignmentscore.assignmentScoreId
+      ]]>
+    </sql>
+  </query>
+  <query name="link.ed.api.teachercategories" flattened="true" tags="">
+    <columns>
+      <column column="teachercategory.categorytype">teachercategory.categorytype</column>
+      <column column="teachercategory.color">teachercategory.color</column>
+      <column column="teachercategory.defaultextracreditpoints">
+        teachercategory.defaultextracreditpoints</column>
+      <column column="teachercategory.defaultpublishoption">teachercategory.defaultpublishoption</column>
+      <column column="teachercategory.defaultpublishstate">teachercategory.defaultpublishstate</column>
+      <column column="teachercategory.defaultscoreentrypoints">
+        teachercategory.defaultscoreentrypoints</column>
+      <column column="teachercategory.defaultscoretype">teachercategory.defaultscoretype</column>
+      <column column="teachercategory.defaulttotalvalue">teachercategory.defaulttotalvalue</column>
+      <column column="teachercategory.defaultweight">teachercategory.defaultweight</column>
+      <column column="teachercategory.description">teachercategory.description</column>
+      <column column="teachercategory.displayposition">teachercategory.displayposition</column>
+      <column column="teachercategory.districtteachercategoryid">
+        teachercategory.districtteachercategoryid</column>
+      <column column="teachercategory.isactive">teachercategory.isactive</column>
+      <column column="teachercategory.isdefaultpublishscores">teachercategory.isdefaultpublishscores</column>
+      <column column="teachercategory.isinfinalgrades">teachercategory.isinfinalgrades</column>
+      <column column="teachercategory.isusermodifiable">teachercategory.isusermodifiable</column>
+      <column column="teachercategory.name">teachercategory.name</column>
+      <column column="teachercategory.teachercategoryid">teachercategory.teachercategoryid</column>
+      <column column="teachercategory.teachermodified">teachercategory.teachermodified</column>
+      <column column="teachercategory.usersdcid">teachercategory.usersdcid</column>
+      <column column="teachercategory.transaction_date">teachercategory.transaction_date</column>
+      <column column="districtteachercategory.color">districtteachercategory.districtteachercategorycolor</column>
+      <column column="districtteachercategory.defaultdaysbeforedue">districtteachercategory.districtteachercategorydefaultdaysbeforedue</column>
+      <column column="districtteachercategory.defaultextracreditpoints">districtteachercategory.districtteachercategorydefaultextracreditpoints</column>
+      <column column="districtteachercategory.defaultpublishoption">districtteachercategory.districtteachercategorydefaultpublishoption</column>
+      <column column="districtteachercategory.defaultpublishstate">districtteachercategory.districtteachercategorydefaultpublishstate</column>
+      <column column="districtteachercategory.defaultscoreentrypoints">districtteachercategory.districtteachercategorydefaultscoreentrypoints</column>
+      <column column="districtteachercategory.defaultscoretype">districtteachercategory.districtteachercategorydefaultscoretype</column>
+      <column column="districtteachercategory.defaulttotalvalue">districtteachercategory.districtteachercategorydefaulttotalvalue</column>
+      <column column="districtteachercategory.defaultweight">districtteachercategory.districtteachercategorydefaultweight</column>
+      <column column="districtteachercategory.description">districtteachercategory.districtteachercategorydescription</column>
+      <column column="districtteachercategory.displayposition">districtteachercategory.districtteachercategorydisplayposition</column>
+      <column column="districtteachercategory.districtteachercategoryid">districtteachercategory.districtteachercategorydistrictteachercategoryid</column>
+      <column column="districtteachercategory.isactive">districtteachercategory.districtteachercategoryisactive</column>
+      <column column="districtteachercategory.isinfinalgrades">districtteachercategory.districtteachercategoryisinfinalgrades</column>
+      <column column="districtteachercategory.isusermodifiable">districtteachercategory.districtteachercategoryisusermodifiable</column>
+      <column column="districtteachercategory.name">districtteachercategory.districtteachercategoryname</column>
+    </columns>
+    <sql>
+      <![CDATA[
+      SELECT
+        teachercategory.categorytype,
+        teachercategory.color,
+        teachercategory.defaultextracreditpoints,
+        teachercategory.defaultpublishoption,
+        teachercategory.defaultpublishstate,
+        teachercategory.defaultscoreentrypoints,
+        teachercategory.defaultscoretype,
+        teachercategory.defaulttotalvalue,
+        teachercategory.defaultweight,
+        teachercategory.description,
+        teachercategory.displayposition,
+        teachercategory.districtteachercategoryid,
+        teachercategory.isactive,
+        teachercategory.isdefaultpublishscores,
+        teachercategory.isinfinalgrades,
+        teachercategory.isusermodifiable,
+        teachercategory.name,
+        teachercategory.teachercategoryid,
+        teachercategory.teachermodified,
+        teachercategory.usersdcid,
+        teachercategory.transaction_date,
+        districtteachercategory.color as districtteachercategorycolor,
+        districtteachercategory.defaultdaysbeforedue as districtteachercategorydefaultdaysbeforedue,
+        districtteachercategory.defaultextracreditpoints as districtteachercategorydefaultextracreditpoints,
+        districtteachercategory.defaultpublishoption as districtteachercategorydefaultpublishoption,
+        districtteachercategory.defaultpublishstate  as districtteachercategorydefaultpublishstate,
+        districtteachercategory.defaultscoreentrypoints as districtteachercategorydefaultscoreentrypoints,
+        districtteachercategory.defaultscoretype as districtteachercategorydefaultscoretype,
+        districtteachercategory.defaulttotalvalue as districtteachercategorydefaulttotalvalue,
+        districtteachercategory.defaultweight as districtteachercategorydefaultweight,
+        districtteachercategory.description as districtteachercategorydescription,
+        districtteachercategory.displayposition as districtteachercategorydisplayposition,
+        districtteachercategory.districtteachercategoryid as districtteachercategorydistrictteachercategoryid,
+        districtteachercategory.isactive as districtteachercategoryisactive,
+        districtteachercategory.isinfinalgrades as districtteachercategoryisinfinalgrades,
+        districtteachercategory.isusermodifiable as districtteachercategoryisusermodifiable,
+        districtteachercategory.name as districtteachercategoryname
+      FROM teachercategory
+      LEFT JOIN districtteachercategory ON teachercategory.districtteachercategoryid = districtteachercategory.districtteachercategoryid
+      ORDER BY teachercategory.teachercategoryid
+      ]]>
+    </sql>
+  </query>
+  <query name="link.ed.api.gpas" flattened="true" tags="">
+    <summary>Edlink GPAs</summary>
+    <description>Edlink GPA Data</description>
+    <columns>
+      <column column="classrank.dateranked">classrank.dateranked</column>
+      <column column="classrank.dcid">classrank.dcid</column>
+      <column column="classrank.gpa">classrank.gpa</column>
+      <column column="classrank.gpamethod">classrank.gpamethod</column>
+      <column column="classrank.grade_level">classrank.grade_level</column>
+      <column column="classrank.id">classrank.id</column>
+      <column column="classrank.outof">classrank.outof</column>
+      <column column="classrank.rank">classrank.rank</column>
+      <column column="classrank.schoolid">classrank.schoolid</column>
+      <column column="classrank.schoolname">classrank.schoolname</column>
+      <column column="classrank.storecode">classrank.storecode</column>
+      <column column="classrank.studentid">classrank.studentid</column>
+      <column column="classrank.unused1">classrank.unused1</column>
+      <column column="classrank.yearid">classrank.yearid</column>
+
+    </columns>
+    <sql>
+      <![CDATA[
+      SELECT
+        classrank.dateranked,
+        classrank.dcid,
+        classrank.gpa,
+        classrank.gpamethod,
+        classrank.grade_level,
+        classrank.id,
+        classrank.outof,
+        classrank.rank,
+        classrank.schoolid,
+        classrank.schoolname,
+        classrank.storecode,
+        classrank.studentid,
+        classrank.unused1,
+        classrank.yearid
+      FROM
+        classrank
+      ORDER BY
+        classrank.id
+      ]]>
+    </sql>
+  </query>
+  <query name="link.ed.api.contactassociations" flattened="true" tags="">
+    <summary>Edlink Contact Associations</summary>
+    <description>Edlink Contact Associations</description>
+    <columns>
+      <column column="studentcontactassoc.studentcontactassocid">studentcontactassoc.studentcontactassocid</column>
+      <column column="studentcontactassoc.studentdcid">studentcontactassoc.studentdcid</column>
+      <column column="studentcontactassoc.personid">studentcontactassoc.personid</column>
+      <column column="studentcontactassoc.contactpriorityorder">studentcontactassoc.contactpriorityorder</column>
+      <column column="studentcontactassoc.currreltypecodesetid">studentcontactassoc.currreltypecodesetid</column>
+      <column column="studentcontactdetail.studentcontactdetailid">studentcontactdetail.studentcontactdetailid</column>
+      <column column="studentcontactdetail.relationshiptypecodesetid">studentcontactdetail.relationshiptypecodesetid</column>
+      <column column="studentcontactdetail.relationshipnote">studentcontactdetail.relationshipnote</column>
+      <column column="studentcontactdetail.isactive">studentcontactdetail.isactive</column>
+      <column column="studentcontactdetail.isemergency">studentcontactdetail.isemergency</column>
+      <column column="studentcontactdetail.iscustodial">studentcontactdetail.iscustodial</column>
+      <column column="studentcontactdetail.liveswithflg">studentcontactdetail.liveswithflg</column>
+      <column column="studentcontactdetail.schoolpickupflg">studentcontactdetail.schoolpickupflg</column>
+      <column column="studentcontactdetail.receivesmailflg">studentcontactdetail.receivesmailflg</column>
+      <column column="studentcontactdetail.excludefromstatereportingflg">studentcontactdetail.excludefromstatereportingflg</column>
+      <column column="studentcontactdetail.startdate">studentcontactdetail.startdate</column>
+      <column column="studentcontactdetail.enddate">studentcontactdetail.enddate</column>
+      <column column="studentcontactdetail.generalcommflag">studentcontactdetail.generalcommflag</column>
+      <column column="studentcontactdetail.confidentialcommflag">studentcontactdetail.confidentialcommflag</column>
+      <column column="studentcontactdetailcorefields.studentcstudentcontactdetailid">studentcontactdetailcorefields.studentcstudentcontactdetailid</column>
+      <column column="studentcontactdetailcorefields.classroomparticipation">studentcontactdetailcorefields.classroomparticipation</column>
+      <column column="studentcontactdetailcorefields.iscaregiver">studentcontactdetailcorefields.iscaregiver</column>
+      <column column="studentcontactdetailcorefields.isvolunteer">studentcontactdetailcorefields.isvolunteer</column>
+      <column column="studentcontactdetailcorefields.legalguardian">studentcontactdetailcorefields.legalguardian</column>
+      <column column="studentcontactdetailcorefields.primarycontact">studentcontactdetailcorefields.primarycontact</column>
+      <column column="studentcontactdetailcorefields.iepaccess">studentcontactdetailcorefields.iepaccess</column>
+      <column column="studentcontactdetailcorefields.nostudentcontact">studentcontactdetailcorefields.nostudentcontact</column>
+      <column column="studentcontactdetailcorefields.physicaladdresssource">studentcontactdetailcorefields.physicaladdresssource</column>
+      <column column="studentcontactdetailcorefields.samehomephonenumber">studentcontactdetailcorefields.samehomephonenumber</column>
+      <column column="studentcontactdetailcorefields.samemailingaddress">studentcontactdetailcorefields.samemailingaddress</column>
+      <column column="studentcontactdetailcorefields.source">studentcontactdetailcorefields.source</column>
+      <column column="codeset.codesetid">codeset.codesetid</column>
+      <column column="codeset.parentcodesetid">codeset.parentcodesetid</column>
+      <column column="codeset.codetype">codeset.codetype</column>
+      <column column="codeset.code">codeset.code</column>
+      <column column="codeset.displayvalue">codeset.displayvalue</column>
+      <column column="codeset.description">codeset.description</column>
+      <column column="codeset.uidisplayorder">codeset.uidisplayorder</column>
+      <column column="codeset.isvisible">codeset.isvisible</column>
+      <column column="codeset.ismodifiable">codeset.ismodifiable</column>
+      <column column="codeset.isdeletable">codeset.isdeletable</column>
+      <column column="codeset.codeorigin">codeset.codeorigin</column>
+      <column column="codeset.reportedvalue">codeset.reportedvalue</column>
+      <column column="codeset.alternatecode1">codeset.alternatecode1</column>
+      <column column="codeset.alternatecode2">codeset.alternatecode2</column>
+      <column column="codeset.effectivestartdate">codeset.effectivestartdate</column>
+      <column column="codeset.effectiveenddate">codeset.effectiveenddate</column>
+      <column column="codeset.excludefromstatereporting">codeset.excludefromstatereporting</column>
+      <column column="codeset.originalcodetype">codeset.originalcodetype</column>
+      <column column="codeset.changevalidation">codeset.changevalidation</column>      
+    </columns>
+    <sql>
+      <![CDATA[
+      SELECT
+        studentcontactassoc.studentcontactassocid,
+        studentcontactassoc.studentdcid,
+        studentcontactassoc.personid,
+        studentcontactassoc.contactpriorityorder,
+        studentcontactassoc.currreltypecodesetid,
+        studentcontactdetail.studentcontactdetailid,
+        studentcontactdetail.relationshiptypecodesetid,
+        studentcontactdetail.relationshipnote,
+        studentcontactdetail.isactive,
+        studentcontactdetail.isemergency,
+        studentcontactdetail.iscustodial,
+        studentcontactdetail.liveswithflg,
+        studentcontactdetail.schoolpickupflg,
+        studentcontactdetail.receivesmailflg,
+        studentcontactdetail.excludefromstatereportingflg,
+        studentcontactdetail.startdate,
+        studentcontactdetail.enddate,
+        studentcontactdetail.generalcommflag,
+        studentcontactdetail.confidentialcommflag,
+        studentcontactdetailcorefields.studentcstudentcontactdetailid,
+        studentcontactdetailcorefields.classroomparticipation,
+        studentcontactdetailcorefields.iscaregiver,
+        studentcontactdetailcorefields.isvolunteer,
+        studentcontactdetailcorefields.legalguardian,
+        studentcontactdetailcorefields.primarycontact,
+        studentcontactdetailcorefields.iepaccess,
+        studentcontactdetailcorefields.nostudentcontact,
+        studentcontactdetailcorefields.physicaladdresssource,
+        studentcontactdetailcorefields.samehomephonenumber,
+        studentcontactdetailcorefields.samemailingaddress,
+        studentcontactdetailcorefields.source,
+        codeset.codesetid,
+        codeset.parentcodesetid,
+        codeset.codetype,
+        codeset.code,
+        codeset.displayvalue,
+        codeset.description,
+        codeset.uidisplayorder,
+        codeset.isvisible,
+        codeset.ismodifiable,
+        codeset.isdeletable,
+        codeset.codeorigin,
+        codeset.reportedvalue,
+        codeset.alternatecode1,
+        codeset.alternatecode2,
+        codeset.effectivestartdate,
+        codeset.effectiveenddate,
+        codeset.excludefromstatereporting,
+        codeset.originalcodetype,
+        codeset.changevalidation
+      FROM
+        studentcontactassoc
+        LEFT JOIN studentcontactdetail ON studentcontactassoc.studentcontactassocid = studentcontactdetail.studentcontactassocid
+        LEFT JOIN studentcontactdetailcorefields ON studentcontactdetail.studentcontactdetailid = studentcontactdetailcorefields.studentcstudentcontactdetailid
+        LEFT JOIN codeset ON studentcontactdetail.relationshiptypecodesetid = codeset.codesetid
+      ORDER BY
+        studentcontactassoc.studentcontactassocid,
+        studentcontactdetail.studentcontactdetailid,
+        studentcontactdetailcorefields.studentcstudentcontactdetailid
+        ]]>
+    </sql>
+  </query>
+  <query name="link.ed.api.person" flattened="true" tags="">
+    <summary>Edlink Person</summary>
+    <description>Edlink Person</description>
+    <columns>
+      <column column="person.dcid">person.dcid</column>
+      <column column="person.id">person.id</column>
+      <column column="person.firstname">person.firstname</column>
+      <column column="person.middlename">person.middlename</column>
+      <column column="person.lastname">person.lastname</column>
+      <column column="person.prefixcodesetid">person.prefixcodesetid</column>
+      <column column="person.suffixcodesetid">person.suffixcodesetid</column>
+      <column column="person.gendercodesetid">person.gendercodesetid</column>
+      <column column="person.statecontactnumber">person.statecontactnumber</column>
+      <column column="person.statecontactid">person.statecontactid</column>
+      <column column="person.employer">person.employer</column>
+      <column column="person.isactive">person.isactive</column>
+      <column column="person.excludefromstatereporting">person.excludefromstatereporting</column>
+      <column column="personemailaddressassoc.personemailaddressassocid">personemailaddressassoc.personemailaddressassocid</column>
+      <column column="personemailaddressassoc.personid">personemailaddressassoc.personid</column>
+      <column column="personemailaddressassoc.emailaddressid">personemailaddressassoc.emailaddressid</column>
+      <column column="personemailaddressassoc.emailtypecodesetid">personemailaddressassoc.emailtypecodesetid</column>
+      <column column="personemailaddressassoc.isprimaryemailaddress">personemailaddressassoc.isprimaryemailaddress</column>
+      <column column="personemailaddressassoc.emailaddresspriorityorder">personemailaddressassoc.emailaddresspriorityorder</column>
+      <column column="emailaddress.emailaddress">emailaddress.emailaddress</column>      
+    </columns>
+    <sql>
+      <![CDATA[
+      SELECT
+        person.dcid,
+        person.id,
+        person.firstname,
+        person.middlename,
+        person.lastname,
+        person.prefixcodesetid,
+        person.suffixcodesetid,
+        person.gendercodesetid,
+        person.statecontactnumber,
+        person.statecontactid,
+        person.employer,
+        person.isactive,
+        person.excludefromstatereporting,
+        personemailaddressassoc.personemailaddressassocid,
+        personemailaddressassoc.personid,
+        personemailaddressassoc.emailaddressid,
+        personemailaddressassoc.emailtypecodesetid,
+        personemailaddressassoc.isprimaryemailaddress,
+        personemailaddressassoc.emailaddresspriorityorder,
+        emailaddress.emailaddress
+      FROM
+        person
+        LEFT JOIN personEmailAddressAssoc ON personEmailAddressAssoc.personId = person.id
+        LEFT JOIN emailAddress ON emailAddress.emailAddressId = personEmailAddressAssoc.emailAddressId
+      ORDER BY
+        person.id,
+        person.dcid
+      ]]>
+    </sql>
+  </query>
+  <query name="link.ed.api.codeset" flattened="true" tags="">
+    <summary>Edlink Code Set</summary>
+    <description>Edlink Code Set</description>
+    <columns>
+      <column column="codeset.codesetid">codeset.codesetid</column>
+      <column column="codeset.parentcodesetid">codeset.parentcodesetid</column>
+      <column column="codeset.codetype">codeset.codetype</column>
+      <column column="codeset.code">codeset.code</column>
+      <column column="codeset.displayvalue">codeset.displayvalue</column>
+      <column column="codeset.description">codeset.description</column>
+      <column column="codeset.uidisplayorder">codeset.uidisplayorder</column>
+      <column column="codeset.isvisible">codeset.isvisible</column>
+      <column column="codeset.ismodifiable">codeset.ismodifiable</column>
+      <column column="codeset.isdeletable">codeset.isdeletable</column>
+      <column column="codeset.codeorigin">codeset.codeorigin</column>
+      <column column="codeset.reportedvalue">codeset.reportedvalue</column>
+      <column column="codeset.alternatecode1">codeset.alternatecode1</column>
+      <column column="codeset.alternatecode2">codeset.alternatecode2</column>
+      <column column="codeset.effectivestartdate">codeset.effectivestartdate</column>
+      <column column="codeset.effectiveenddate">codeset.effectiveenddate</column>
+      <column column="codeset.excludefromstatereporting">codeset.excludefromstatereporting</column>
+      <column column="codeset.originalcodetype">codeset.originalcodetype</column>
+      <column column="codeset.changevalidation">codeset.changevalidation</column>    
+    </columns>
+    <sql>
+      <![CDATA[
+      SELECT
+        codeset.codesetid,
+        codeset.parentcodesetid,
+        codeset.codetype,
+        codeset.code,
+        codeset.displayvalue,
+        codeset.description,
+        codeset.uidisplayorder,
+        codeset.isvisible,
+        codeset.ismodifiable,
+        codeset.isdeletable,
+        codeset.codeorigin,
+        codeset.reportedvalue,
+        codeset.alternatecode1,
+        codeset.alternatecode2,
+        codeset.effectivestartdate,
+        codeset.effectiveenddate,
+        codeset.excludefromstatereporting,
+        codeset.originalcodetype,
+        codeset.changevalidation
+      FROM
+        codeset
+      ORDER BY
+        codeset.codesetid
+      ]]>
+    </sql>
+  </query>
+  <query name="link.ed.api.bell_schedule" flattened="true" tags="">
+    <summary>Edlink Bell Schedule</summary>
+    <description>Edlink Bell Schedule Data</description>
+    <columns>
+        <column column="bell_schedule.id">bell_schedule.id</column>
+        <column column="bell_schedule.attendance_conversion_id">bell_schedule.attendance_conversion_id</column>
+        <column column="bell_schedule.dcid">bell_schedule.dcid</column>
+        <column column="bell_schedule.name">bell_schedule.name</column>
+        <column column="bell_schedule.schoolid">bell_schedule.schoolid</column>
+        <column column="bell_schedule.year_id">bell_schedule.year_id</column>
+    </columns>
+    <sql>
+        <![CDATA[
+        SELECT
+            bell_schedule.id,
+            bell_schedule.attendance_conversion_id,
+            bell_schedule.dcid,
+            bell_schedule.name,
+            bell_schedule.schoolid,
+            bell_schedule.year_id
+        FROM
+            bell_schedule
+        ORDER BY bell_schedule.id
+        ]]>
+    </sql>
+  </query>
+  <query name="link.ed.api.bell_schedule_items" flattened="true" tags="">
+      <summary>Edlink Bell Schedule Items</summary>
+      <description>Edlink Bell Schedule Items Data</description>
+      <columns>
+          <column column="bell_schedule_items.id">bell_schedule_items.id</column>
+          <column column="bell_schedule_items.ada_code">bell_schedule_items.ada_code</column>
+          <column column="bell_schedule_items.bell_schedule_id">bell_schedule_items.bell_schedule_id</column>
+          <column column="bell_schedule_items.daily_attendance_code">bell_schedule_items.daily_attendance_code</column>
+          <column column="bell_schedule_items.daily_time_in_default">bell_schedule_items.daily_time_in_default</column>
+          <column column="bell_schedule_items.daily_time_out_default">bell_schedule_items.daily_time_out_default</column>
+          <column column="bell_schedule_items.daypartid">bell_schedule_items.daypartid</column>
+          <column column="bell_schedule_items.dcid">bell_schedule_items.dcid</column>
+          <column column="bell_schedule_items.end_time">bell_schedule_items.end_time</column>
+          <column column="bell_schedule_items.minutes_attended">bell_schedule_items.minutes_attended</column>
+          <column column="bell_schedule_items.period_id">bell_schedule_items.period_id</column>
+          <column column="bell_schedule_items.start_time">bell_schedule_items.start_time</column>
+      </columns>
+      <sql>
+          <![CDATA[
+          SELECT
+              bell_schedule_items.id,
+              bell_schedule_items.ada_code,
+              bell_schedule_items.bell_schedule_id,
+              bell_schedule_items.daily_attendance_code,
+              bell_schedule_items.daily_time_in_default,
+              bell_schedule_items.daily_time_out_default,
+              bell_schedule_items.daypartid,
+              bell_schedule_items.dcid,
+              bell_schedule_items.end_time,
+              bell_schedule_items.minutes_attended,
+              bell_schedule_items.period_id,
+              bell_schedule_items.start_time
+          FROM
+              bell_schedule_items
+          ORDER BY bell_schedule_items.id
+          ]]>
+      </sql>
+  </query>
+  <query name="link.ed.api.scheduleperiods" flattened="true" tags="">
+      <summary>Edlink Schedule Periods</summary>
+      <description>Edlink Schedule Periods Data</description>
+      <columns>
+          <column column="scheduleperiods.id">scheduleperiods.id</column>
+          <column column="scheduleperiods.abbr">scheduleperiods.abbr</column>
+          <column column="scheduleperiods.blockstart">scheduleperiods.blockstart</column>
+          <column column="scheduleperiods.buildid">scheduleperiods.buildid</column>
+          <column column="scheduleperiods.coreperiod">scheduleperiods.coreperiod</column>
+          <column column="scheduleperiods.dcid">scheduleperiods.dcid</column>
+          <column column="scheduleperiods.description">scheduleperiods.description</column>
+          <column column="scheduleperiods.endtime1">scheduleperiods.endtime1</column>
+          <column column="scheduleperiods.endtime2">scheduleperiods.endtime2</column>
+          <column column="scheduleperiods.periodid">scheduleperiods.periodid</column>
+          <column column="scheduleperiods.periodnumber">scheduleperiods.periodnumber</column>
+          <column column="scheduleperiods.scheduleid">scheduleperiods.scheduleid</column>
+          <column column="scheduleperiods.schedulestudies">scheduleperiods.schedulestudies</column>
+          <column column="scheduleperiods.schoolid">scheduleperiods.schoolid</column>
+          <column column="scheduleperiods.sort">scheduleperiods.sort</column>
+          <column column="scheduleperiods.starttime1">scheduleperiods.starttime1</column>
+          <column column="scheduleperiods.starttime2">scheduleperiods.starttime2</column>
+          <column column="scheduleperiods.useforbuild">scheduleperiods.useforbuild</column>
+          <column column="scheduleperiods.useforlunches">scheduleperiods.useforlunches</column>
+      </columns>
+      <sql>
+          <![CDATA[
+          SELECT
+              scheduleperiods.id,
+              scheduleperiods.abbr,
+              scheduleperiods.blockstart,
+              scheduleperiods.buildid,
+              scheduleperiods.coreperiod,
+              scheduleperiods.dcid,
+              scheduleperiods.description,
+              scheduleperiods.endtime1,
+              scheduleperiods.endtime2,
+              scheduleperiods.periodid,
+              scheduleperiods.periodnumber,
+              scheduleperiods.scheduleid,
+              scheduleperiods.schedulestudies,
+              scheduleperiods.schoolid,
+              scheduleperiods.sort,
+              scheduleperiods.starttime1,
+              scheduleperiods.starttime2,
+              scheduleperiods.useforbuild,
+              scheduleperiods.useforlunches
+          FROM
+              scheduleperiods
+          ORDER BY scheduleperiods.id
+          ]]>
+      </sql>
+  </query>
+  <query name="link.ed.api.scheduledays" flattened="true" tags="">
+      <summary>Edlink Schedule Days</summary>
+      <description>Edlink Schedule Days Data</description>
+      <columns>
+          <column column="scheduledays.id">scheduledays.id</column>
+          <column column="scheduledays.abbr">scheduledays.abbr</column>
+          <column column="scheduledays.buildid">scheduledays.buildid</column>
+          <column column="scheduledays.dayid">scheduledays.dayid</column>
+          <column column="scheduledays.dcid">scheduledays.dcid</column>
+          <column column="scheduledays.description">scheduledays.description</column>
+          <column column="scheduledays.letter">scheduledays.letter</column>
+          <column column="scheduledays.schoolid">scheduledays.schoolid</column>
+      </columns>
+      <sql>
+          <![CDATA[
+          SELECT
+              scheduledays.id,
+              scheduledays.abbr,
+              scheduledays.buildid,
+              scheduledays.dayid,
+              scheduledays.dcid,
+              scheduledays.description,
+              scheduledays.letter,
+              scheduledays.schoolid
+          FROM
+              scheduledays
+          ORDER BY scheduledays.id
+          ]]>
+      </sql>
+  </query>
+  <query name="link.ed.api.schedulecc" flattened="true" tags="">
+      <summary>Edlink Schedule CC</summary>
+      <description>Edlink Schedule CC Data</description>
+      <columns>
+          <column column="schedulecc.id">schedulecc.id</column>
+          <column column="schedulecc.buildid">schedulecc.buildid</column>
+          <column column="schedulecc.course_number">schedulecc.course_number</column>
+          <column column="schedulecc.dateenrolled">schedulecc.dateenrolled</column>
+          <column column="schedulecc.dateleft">schedulecc.dateleft</column>
+          <column column="schedulecc.dcid">schedulecc.dcid</column>
+          <column column="schedulecc.expression">schedulecc.expression</column>
+          <column column="schedulecc.loadlock">schedulecc.loadlock</column>
+          <column column="schedulecc.period">schedulecc.period</column>
+          <column column="schedulecc.schoolid">schedulecc.schoolid</column>
+          <column column="schedulecc.sectionid">schedulecc.sectionid</column>
+          <column column="schedulecc.sectiontype">schedulecc.sectiontype</column>
+          <column column="schedulecc.section_number">schedulecc.section_number</column>
+          <column column="schedulecc.studyear">schedulecc.studyear</column>
+          <column column="schedulecc.studentid">schedulecc.studentid</column>
+          <column column="schedulecc.teacherid">schedulecc.teacherid</column>
+          <column column="schedulecc.termid">schedulecc.termid</column>
+      </columns>
+      <sql>
+          <![CDATA[
+          SELECT
+              schedulecc.id,
+              schedulecc.buildid,
+              schedulecc.course_number,
+              schedulecc.dateenrolled,
+              schedulecc.dateleft,
+              schedulecc.dcid,
+              schedulecc.expression,
+              schedulecc.loadlock,
+              schedulecc.period,
+              schedulecc.schoolid,
+              schedulecc.sectionid,
+              schedulecc.sectiontype,
+              schedulecc.section_number,
+              schedulecc.studyear,
+              schedulecc.studentid,
+              schedulecc.teacherid,
+              schedulecc.termid
+          FROM
+              schedulecc
+          ORDER BY schedulecc.id
+          ]]>
+      </sql>
+  </query>
+  <query name="link.ed.api.spenrollments" flattened="true" tags="">
+      <summary>Edlink Sp Enrollments</summary>
+      <description>Edlink Sp Enrollments Data</description>
+      <columns>
+          <column column="spenrollments.id">spenrollments.id</column>
+          <column column="spenrollments.code1">spenrollments.code1</column>
+          <column column="spenrollments.code2">spenrollments.code2</column>
+          <column column="spenrollments.sp_comment">spenrollments.sp_comment</column>
+          <column column="spenrollments.custom">spenrollments.custom</column>
+          <column column="spenrollments.dcid">spenrollments.dcid</column>
+          <column column="spenrollments.enter_date">spenrollments.enter_date</column>
+          <column column="spenrollments.exitcode">spenrollments.exitcode</column>
+          <column column="spenrollments.exit_date">spenrollments.exit_date</column>
+          <column column="spenrollments.gradelevel">spenrollments.gradelevel</column>
+          <column column="spenrollments.programid">spenrollments.programid</column>
+          <column column="spenrollments.schoolid">spenrollments.schoolid</column>
+          <column column="spenrollments.studentid">spenrollments.studentid</column>
+      </columns>
+      <sql>
+          <![CDATA[
+          SELECT
+              spenrollments.id,
+              spenrollments.code1,
+              spenrollments.code2,
+              spenrollments.sp_comment,
+              spenrollments.custom,
+              spenrollments.dcid,
+              spenrollments.enter_date,
+              spenrollments.exitcode,
+              spenrollments.exit_date,
+              spenrollments.gradelevel,
+              spenrollments.programid,
+              spenrollments.schoolid,
+              spenrollments.studentid
+          FROM
+              spenrollments
+          ORDER BY spenrollments.id
+          ]]>
+      </sql>
+  </query>
+  <query name="link.ed.api.systemhistory" flattened="true" tags="">
+    <summary>Edlink System History</summary>
+    <description>Edlink System History Data</description>
+    <columns>
+        <column column="systemhistory.id">systemhistory.id</column>
+        <column column="systemhistory.app_tzoffset">systemhistory.app_tzoffset</column>
+        <column column="systemhistory.db_tzoffset">systemhistory.db_tzoffset</column>
+        <column column="systemhistory.host_name">systemhistory.host_name</column>
+        <column column="systemhistory.ip_address">systemhistory.ip_address</column>
+        <column column="systemhistory.ps_version">systemhistory.ps_version</column>
+        <column column="systemhistory.server_instanceid">systemhistory.server_instanceid</column>
+        <column column="systemhistory.sr_version">systemhistory.sr_version</column>
+    </columns>
+    <sql>
+        <![CDATA[
+        SELECT
+            systemhistory.id,
+            systemhistory.app_tzoffset,
+            systemhistory.db_tzoffset,
+            systemhistory.host_name,
+            systemhistory.ip_address,
+            systemhistory.ps_version,
+            systemhistory.server_instanceid,
+            systemhistory.sr_version
+        FROM
+            systemhistory
+        ORDER BY systemhistory.id
+        ]]>
+    </sql>
+</query>
+<query name="link.ed.api.demographic" flattened="true" tags="">
+  <summary>Edlink Demographic</summary>
+  <description>Edlink Demographic Data</description>
+  <columns>
+      <column column="demographic.birth_cert_verify_dt">demographic.birth_cert_verify_dt</column>
+      <column column="demographic.birth_certificate_num">demographic.birth_certificate_num</column>
+      <column column="demographic.birth_city">demographic.birth_city</column>
+      <column column="demographic.birth_country_cd">demographic.birth_country_cd</column>
+      <column column="demographic.birth_dt">demographic.birth_dt</column>
+      <column column="demographic.birth_state_cd">demographic.birth_state_cd</column>
+      <column column="demographic.citizenship_cd">demographic.citizenship_cd</column>
+      <column column="demographic.dcid">demographic.dcid</column>
+      <column column="demographic.econom_disadvantaged">demographic.econom_disadvantaged</column>
+      <column column="demographic.gifted_yn">demographic.gifted_yn</column>
+      <column column="demographic.home_lang_cd">demographic.home_lang_cd</column>
+      <column column="demographic.home_schooled_yn">demographic.home_schooled_yn</column>
+      <column column="demographic.homeless_yn">demographic.homeless_yn</column>
+      <column column="demographic.id">demographic.id</column>
+      <column column="demographic.immigrant_yn">demographic.immigrant_yn</column>
+      <column column="demographic.lim_eng_prof">demographic.lim_eng_prof</column>
+      <column column="demographic.migrant_yn">demographic.migrant_yn</column>
+      <column column="demographic.primary_lang_cd">demographic.primary_lang_cd</column>
+      <column column="demographic.single_parent_yn">demographic.single_parent_yn</column>
+      <column column="demographic.studentid">demographic.studentid</column>
+      <column column="demographic.transient_yn">demographic.transient_yn</column>
+      <column column="demographic.ward_of_state_yn">demographic.ward_of_state_yn</column>
+  </columns>
+  <sql>
+      <![CDATA[
+      SELECT
+          demographic.birth_cert_verify_dt,
+          demographic.birth_certificate_num,
+          demographic.birth_city,
+          demographic.birth_country_cd,
+          demographic.birth_dt,
+          demographic.birth_state_cd,
+          demographic.citizenship_cd,
+          demographic.dcid,
+          demographic.econom_disadvantaged,
+          demographic.gifted_yn,
+          demographic.home_lang_cd,
+          demographic.home_schooled_yn,
+          demographic.homeless_yn,
+          demographic.id,
+          demographic.immigrant_yn,
+          demographic.lim_eng_prof,
+          demographic.migrant_yn,
+          demographic.primary_lang_cd,
+          demographic.single_parent_yn,
+          demographic.studentid,
+          demographic.transient_yn,
+          demographic.ward_of_state_yn
+      FROM
+          demographic
+      ORDER BY demographic.id
+      ]]>
+  </sql>
+</query>
+
+<query name="link.ed.api.psm_studentcontact" flattened="true" tags="">
+  <summary>Edlink psm_studentcontact</summary>
+  <description>Edlink psm_studentcontact Data</description>
+  <columns>
+      <column column="psm_studentcontact.email">psm_studentcontact.email</column>
+      <column column="psm_studentcontact.firstname">psm_studentcontact.firstname</column>
+      <column column="psm_studentcontact.id">psm_studentcontact.id</column>
+      <column column="psm_studentcontact.lastname">psm_studentcontact.lastname</column>
+      <column column="psm_studentcontact.phone">psm_studentcontact.phone</column>
+      <column column="psm_studentcontact.studentcontacttypeid">psm_studentcontact.studentcontacttypeid</column>
+      <column column="psm_studentcontact.studentid">psm_studentcontact.studentid</column>
+  </columns>
+  <sql>
+      <![CDATA[
+      SELECT
+          psm_studentcontact.email,
+          psm_studentcontact.firstname,
+          psm_studentcontact.id,
+          psm_studentcontact.lastname,
+          psm_studentcontact.phone,
+          psm_studentcontact.studentcontacttypeid,
+          psm_studentcontact.studentid
+      FROM
+          psm_studentcontact
+      ORDER BY psm_studentcontact.id
+      ]]>
+  </sql>
+</query>
+
+<query name="link.ed.api.psm_studentcontacttype" flattened="true" tags="">
+  <summary>Edlink psm_studentcontactType</summary>
+  <description>Edlink psm_studentcontactType Data</description>
+  <columns>
+      <column column="psm_studentcontacttype.description">psm_studentcontacttype.description</column>
+      <column column="psm_studentcontacttype.id">psm_studentcontacttype.id</column>
+      <column column="psm_studentcontacttype.name">psm_studentcontacttype.name</column>
+  </columns>
+  <sql>
+      <![CDATA[
+      SELECT
+          psm_studentcontacttype.description,
+          psm_studentcontacttype.id,
+          psm_studentcontacttype.name
+      FROM
+          psm_studentcontacttype
+      ORDER BY psm_studentcontacttype.id
+      ]]>
+  </sql>
+</query>
+
+<query name="link.ed.api.daypart" flattened="true" tags="">
+  <summary>Edlink DayPart</summary>
+  <description>Edlink DayPart Data</description>
+  <columns>
+      <column column="daypart.description">daypart.description</column>
+      <column column="daypart.id">daypart.id</column>
+      <column column="daypart.isenabled">daypart.isenabled</column>
+      <column column="daypart.isvaliddaypart">daypart.isvaliddaypart</column>
+      <column column="daypart.name">daypart.name</column>
+  </columns>
+  <sql>
+      <![CDATA[
+      SELECT
+          daypart.description,
+          daypart.id,
+          daypart.isenabled,
+          daypart.isvaliddaypart,
+          daypart.name
+      FROM
+          daypart
+      ORDER BY daypart.id
+      ]]>
+  </sql>
+</query>
+
+<query name="link.ed.api.personphonenumberassoc" flattened="true" tags="">
+  <summary>Edlink PersonPhoneNumberAssoc</summary>
+  <description>Edlink PersonPhoneNumberAssoc Data</description>
+  <columns>
+      <column column="personphonenumberassoc.ispreferred">personphonenumberassoc.ispreferred</column>
+      <column column="personphonenumberassoc.personid">personphonenumberassoc.personid</column>
+      <column column="personphonenumberassoc.personphonenumberassocid">personphonenumberassoc.personphonenumberassocid</column>
+      <column column="personphonenumberassoc.phonenumberasentered">personphonenumberassoc.phonenumberasentered</column>
+      <column column="personphonenumberassoc.phonenumberid">personphonenumberassoc.phonenumberid</column>
+      <column column="personphonenumberassoc.phonenumberpriorityorder">personphonenumberassoc.phonenumberpriorityorder</column>
+      <column column="personphonenumberassoc.phonetypecodesetid">personphonenumberassoc.phonetypecodesetid</column>
+  </columns>
+  <sql>
+      <![CDATA[
+      SELECT
+          personphonenumberassoc.ispreferred,
+          personphonenumberassoc.personid,
+          personphonenumberassoc.personphonenumberassocid,
+          personphonenumberassoc.phonenumberasentered,
+          personphonenumberassoc.phonenumberid,
+          personphonenumberassoc.phonenumberpriorityorder,
+          personphonenumberassoc.phonetypecodesetid
+      FROM
+          personphonenumberassoc
+      ORDER BY personphonenumberassoc.personphonenumberassocid
+      ]]>
+  </sql>
+</query>
+
+
+<query name="link.ed.api.phonenumber" flattened="true" tags="">
+  <summary>Edlink PhoneNumber</summary>
+  <description>Edlink PhoneNumber Data</description>
+  <columns>
+      <column column="phonenumber.issms">phonenumber.issms</column>
+      <column column="phonenumber.phonenumber">phonenumber.phonenumber</column>
+      <column column="phonenumber.phonenumberext">phonenumber.phonenumberext</column>
+      <column column="phonenumber.phonenumberid">phonenumber.phonenumberid</column>
+  </columns>
+  <sql>
+      <![CDATA[
+      SELECT
+          phonenumber.issms,
+          phonenumber.phonenumber,
+          phonenumber.phonenumberext,
+          phonenumber.phonenumberid
+      FROM
+          phonenumber
+      ORDER BY phonenumber.phonenumberid
+      ]]>
+  </sql>
+</query>
+
+<query name="link.ed.api.pgfinalgrades" flattened="true" tags="">
+  <summary>Edlink PG Final Grades</summary>
+  <description>Edlink PG Final Grades Data</description>
+  <columns>
+      <column column="pgfinalgrades.dcid">pgfinalgrades.dcid</column>
+      <column column="pgfinalgrades.id">pgfinalgrades.id</column>
+      <column column="pgfinalgrades.sectionid">pgfinalgrades.sectionid</column>
+      <column column="pgfinalgrades.studentid">pgfinalgrades.studentid</column>
+      <column column="pgfinalgrades.finalgradename">pgfinalgrades.finalgradename</column>
+      <column column="pgfinalgrades.grade">pgfinalgrades.grade</column>
+      <column column="pgfinalgrades.citizenship">pgfinalgrades.citizenship</column>
+      <column column="pgfinalgrades.percent">pgfinalgrades.percent</column>
+      <column column="pgfinalgrades.points">pgfinalgrades.points</column>
+      <column column="pgfinalgrades.pointspossible">pgfinalgrades.pointspossible</column>
+      <column column="pgfinalgrades.startdate">pgfinalgrades.startdate</column>
+      <column column="pgfinalgrades.enddate">pgfinalgrades.enddate</column>
+      <column column="pgfinalgrades.comment_value">pgfinalgrades.comment_value</column>
+      <column column="pgfinalgrades.lastgradeupdate">pgfinalgrades.lastgradeupdate</column>
+      <column column="pgfinalgrades.varcredit">pgfinalgrades.varcredit</column>
+      <column column="pgfinalgrades.overridefg">pgfinalgrades.overridefg</column>
+      <column column="pgfinalgrades.gradebooktype">pgfinalgrades.gradebooktype</column>
+      <column column="pgfinalgrades.ip_address">pgfinalgrades.ip_address</column>
+      <column column="pgfinalgrades.transaction_date">pgfinalgrades.transaction_date</column>
+  </columns>
+  <sql>
+      <![CDATA[
+      SELECT pgfinalgrades.dcid,
+      pgfinalgrades.id,
+      pgfinalgrades.sectionid,
+      pgfinalgrades.studentid,
+      pgfinalgrades.finalgradename,
+      pgfinalgrades.grade,
+      pgfinalgrades.citizenship,
+      pgfinalgrades.percent,
+      pgfinalgrades.points,
+      pgfinalgrades.pointspossible,
+      pgfinalgrades.startdate,
+      pgfinalgrades.enddate,
+      pgfinalgrades.comment_value,
+      pgfinalgrades.lastgradeupdate,
+      pgfinalgrades.varcredit,
+      pgfinalgrades.overridefg,
+      pgfinalgrades.gradebooktype,
+      pgfinalgrades.ip_address,
+      pgfinalgrades.transaction_date
+      FROM pgfinalgrades
+      ]]>
+  </sql>
+</query>
+
+<query name="link.ed.api.storedgrades" flattened="true" tags="">
+  <summary>Edlink Stored Grades</summary>
+  <description>Edlink Stored Grades Data</description>
+  <columns>
+      <column column="storedgrades.dcid">storedgrades.dcid</column>
+      <column column="storedgrades.studentid">storedgrades.studentid</column>
+      <column column="storedgrades.sectionid">storedgrades.sectionid</column>
+      <column column="storedgrades.termid">storedgrades.termid</column>
+      <column column="storedgrades.storecode">storedgrades.storecode</column>
+      <column column="storedgrades.datestored">storedgrades.datestored</column>
+      <column column="storedgrades.grade">storedgrades.grade</column>
+      <column column="storedgrades.percent">storedgrades.percent</column>
+      <column column="storedgrades.absences">storedgrades.absences</column>
+      <column column="storedgrades.tardies">storedgrades.tardies</column>
+      <column column="storedgrades.behavior">storedgrades.behavior</column>
+      <column column="storedgrades.potentialcrhrs">storedgrades.potentialcrhrs</column>
+      <column column="storedgrades.earnedcrhrs">storedgrades.earnedcrhrs</column>
+      <column column="storedgrades.comment_value">storedgrades.comment_value</column>
+      <column column="storedgrades.course_name">storedgrades.course_name</column>
+      <column column="storedgrades.course_number">storedgrades.course_number</column>
+      <column column="storedgrades.credit_type">storedgrades.credit_type</column>
+      <column column="storedgrades.grade_level">storedgrades.grade_level</column>
+      <column column="storedgrades.schoolid">storedgrades.schoolid</column>
+      <column column="storedgrades.log">storedgrades.log</column>
+      <column column="storedgrades.course_equiv">storedgrades.course_equiv</column>
+      <column column="storedgrades.schoolname">storedgrades.schoolname</column>
+      <column column="storedgrades.gradescale_name">storedgrades.gradescale_name</column>
+      <column column="storedgrades.teacher_name">storedgrades.teacher_name</column>
+      <column column="storedgrades.excludefromgpa">storedgrades.excludefromgpa</column>
+      <column column="storedgrades.gpa_points">storedgrades.gpa_points</column>
+      <column column="storedgrades.gpa_addedvalue">storedgrades.gpa_addedvalue</column>
+      <column column="storedgrades.gpa_custom2">storedgrades.gpa_custom2</column>
+      <column column="storedgrades.excludefromclassrank">storedgrades.excludefromclassrank</column>
+      <column column="storedgrades.excludefromhonorroll">storedgrades.excludefromhonorroll</column>
+      <column column="storedgrades.gpa_custom1">storedgrades.gpa_custom1</column>
+      <column column="storedgrades.ab_course_cmp_fun_flg">storedgrades.ab_course_cmp_fun_flg</column>
+      <column column="storedgrades.ab_course_cmp_ext_crd">storedgrades.ab_course_cmp_ext_crd</column>
+      <column column="storedgrades.ab_course_cmp_fun_sch">storedgrades.ab_course_cmp_fun_sch</column>
+      <column column="storedgrades.ab_course_cmp_met_cd">storedgrades.ab_course_cmp_met_cd</column>
+      <column column="storedgrades.ab_course_eva_pro_cd">storedgrades.ab_course_eva_pro_cd</column>
+      <column column="storedgrades.ab_course_cmp_sta_cd">storedgrades.ab_course_cmp_sta_cd</column>
+      <column column="storedgrades.ab_pri_del_met_cd">storedgrades.ab_pri_del_met_cd</column>
+      <column column="storedgrades.ab_lng_cd">storedgrades.ab_lng_cd</column>
+      <column column="storedgrades.ab_dipl_exam_mark">storedgrades.ab_dipl_exam_mark</column>
+      <column column="storedgrades.ab_final_mark">storedgrades.ab_final_mark</column>
+      <column column="storedgrades.isearnedcrhrsfromgb">storedgrades.isearnedcrhrsfromgb</column>
+      <column column="storedgrades.ispotentialcrhrsfromgb">storedgrades.ispotentialcrhrsfromgb</column>
+      <column column="storedgrades.termbinsname">storedgrades.termbinsname</column>
+      <column column="storedgrades.replaced_grade">storedgrades.replaced_grade</column>
+      <column column="storedgrades.excludefromtranscripts">storedgrades.excludefromtranscripts</column>
+      <column column="storedgrades.replaced_dcid">storedgrades.replaced_dcid</column>
+      <column column="storedgrades.excludefromgraduation">storedgrades.excludefromgraduation</column>
+      <column column="storedgrades.excludefromgradesuppression">storedgrades.excludefromgradesuppression</column>
+      <column column="storedgrades.replaced_equivalent_course">storedgrades.replaced_equivalent_course</column>
+      <column column="storedgrades.gradereplacementpolicy_id">storedgrades.gradereplacementpolicy_id</column>
+      <column column="storedgrades.ip_address">storedgrades.ip_address</column>
+      <column column="storedgrades.transaction_date">storedgrades.transaction_date</column>
+  </columns>
+  <sql>
+      <![CDATA[
+      SELECT
+      storedgrades.dcid,
+      storedgrades.studentid,
+      storedgrades.sectionid,
+      storedgrades.termid,
+      storedgrades.storecode,
+      storedgrades.datestored,
+      storedgrades.grade,
+      storedgrades.percent,
+      storedgrades.absences,
+      storedgrades.tardies,
+      storedgrades.behavior,
+      storedgrades.potentialcrhrs,
+      storedgrades.earnedcrhrs,
+      storedgrades.comment_value,
+      storedgrades.course_name,
+      storedgrades.course_number,
+      storedgrades.credit_type,
+      storedgrades.grade_level,
+      storedgrades.schoolid,
+      storedgrades.log,
+      storedgrades.course_equiv,
+      storedgrades.schoolname,
+      storedgrades.gradescale_name,
+      storedgrades.teacher_name,
+      storedgrades.excludefromgpa,
+      storedgrades.gpa_points,
+      storedgrades.gpa_addedvalue,
+      storedgrades.gpa_custom2,
+      storedgrades.excludefromclassrank,
+      storedgrades.excludefromhonorroll,
+      storedgrades.gpa_custom1,
+      storedgrades.ab_course_cmp_fun_flg,
+      storedgrades.ab_course_cmp_ext_crd,
+      storedgrades.ab_course_cmp_fun_sch,
+      storedgrades.ab_course_cmp_met_cd,
+      storedgrades.ab_course_eva_pro_cd,
+      storedgrades.ab_course_cmp_sta_cd,
+      storedgrades.ab_pri_del_met_cd,
+      storedgrades.ab_lng_cd,
+      storedgrades.ab_dipl_exam_mark,
+      storedgrades.ab_final_mark,
+      storedgrades.isearnedcrhrsfromgb,
+      storedgrades.ispotentialcrhrsfromgb,
+      storedgrades.termbinsname,
+      storedgrades.replaced_grade,
+      storedgrades.excludefromtranscripts,
+      storedgrades.replaced_dcid,
+      storedgrades.excludefromgraduation,
+      storedgrades.excludefromgradesuppression,
+      storedgrades.replaced_equivalent_course,
+      storedgrades.gradereplacementpolicy_id,
+      storedgrades.ip_address,
+      storedgrades.transaction_date
+      FROM StoredGrades
+      ]]>
+  </sql>
+</query>
+
+<query name="link.ed.api.school_courses" flattened="true" tags="">
+  <summary>Edlink School Courses</summary>
+  <description>Edlink School Courses Data</description>
+  <columns>
+    <column column="school_course.alt_course_number">school_course.alt_course_number</column>
+    <column column="school_course.att_mode_code">school_course.att_mode_code</column>
+    <column column="school_course.courseid">school_course.courseid</column>
+    <column column="school_course.dcid">school_course.dcid</column>
+    <column column="school_course.exclude_state_rpt_yn">school_course.exclude_state_rpt_yn</column>
+    <column column="school_course.id">school_course.id</column>
+    <column column="school_course.schoolid">school_course.schoolid</column>
+    <column column="school_course.status">school_course.status</column>
+    <column column="school_course.yearid">school_course.yearid</column>
+  </columns>
+  <sql>
+    <![CDATA[
+    SELECT
+      school_course.alt_course_number,
+      school_course.att_mode_code,
+      school_course.courseid,
+      school_course.dcid,
+      school_course.exclude_state_rpt_yn,
+      school_course.id,
+      school_course.schoolid,
+      school_course.status,
+      school_course.yearid
+    FROM
+      school_course
+    order by school_course.id
+    ]]>
+  </sql>
+</query>
+
+</queries>
